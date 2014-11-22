@@ -53,6 +53,18 @@
         android:minHeight="32dip"
         android:text="Prikaži rezultate"
         android:textColor="@android:color/white" />
+    
+    <Button
+        android:id="@+id/btnPravila"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/zeleni_okvir"
+        android:minHeight="32dip"
+        android:text="Pravila"
+        android:textColor="@android:color/white" />
 
     <ImageView
         android:id="@+id/imageView1"

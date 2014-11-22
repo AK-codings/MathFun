@@ -17,6 +17,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Button btPromjeni=(Button) findViewById(R.id.button1);
+		Button btnPravila = (Button) findViewById(R.id.btnPravila);
+		
 		btPromjeni.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -25,6 +27,16 @@ public class MainActivity extends Activity {
 				startActivity(new Intent(getBaseContext(), nickname.class));
 			}
 		});
+		
+		btnPravila.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(getBaseContext(), Pravila.class));
+			}
+		});
+		
 //		Thread thread = new Thread(){
 //			public void run() {
 //				try {
@@ -60,4 +72,5 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
 }

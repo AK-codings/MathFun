@@ -4,5 +4,6 @@
     <string name="app_name">TestMathFun</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="pravila">Aplikaciju MathFun sačinjava nekoliko nivoa težine matematičkih zadataka prikazanih kroz tri modula.Moduli se razlikuju u načinu pristupa rješavanju matematičkih zadataka. </string>
 
 </resources>
