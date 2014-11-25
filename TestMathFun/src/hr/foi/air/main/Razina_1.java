@@ -1,7 +1,8 @@
-package air.testmathfun;
+package hr.foi.air.main;
 
 import java.util.Random;
 
+import air.testmathfun.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

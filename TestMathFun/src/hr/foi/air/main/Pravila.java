@@ -1,6 +1,7 @@
-package air.testmathfun;
+package hr.foi.air.main;
 
 
+import air.testmathfun.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;

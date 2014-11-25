@@ -1,4 +1,4 @@
-package air.testmathfun;
+package hr.foi.air.main;
 
 import android.app.ListActivity;
 import android.content.Intent;
