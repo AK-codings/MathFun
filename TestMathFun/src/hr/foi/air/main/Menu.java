@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class menu extends ListActivity {
+public class Menu extends ListActivity {
 	String []menu= {"Razina_1", "Nesto_drugo", "Nesto_trece", "Nesto_cetvrto", "Nesto_peto", "Nesto_sesto", "Nesto_sedmo", "Nesto_osmo", "Nesto_deveto", "Nesto_deseto"};
 	
 	@Override
@@ -31,7 +31,7 @@ public class menu extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		String kliknuto=menu[position];
 		try {
-			Class myClass = Class.forName("air.testmathfun."+kliknuto);
+			Class myClass = Class.forName("hr.foi.air.main."+kliknuto);
 			Intent intent=new Intent(getBaseContext(), Razina_1.class);
 			startActivity(intent);
 		} catch (ClassNotFoundException e) {

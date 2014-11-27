@@ -1,17 +1,17 @@
 package hr.foi.air.main;
 
-
 import air.testmathfun.R;
-import android.app.Activity;
-import android.os.Bundle;
-import android.webkit.WebView;
 
-public class Pravila extends Activity{
-	
+public class Pravila extends BaseActivity {
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_pravila);
+	public int getLayout() {
+		return R.layout.activity_pravila;
 	}
-	
+
+	@Override
+	public void initView() {
+
+	}
+
 }
