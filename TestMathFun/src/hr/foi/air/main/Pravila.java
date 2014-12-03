@@ -6,7 +6,7 @@ public class Pravila extends BaseActivity {
 
 	@Override
 	public int getLayout() {
-		return R.layout.activity_pravila;
+		return R.layout.pravila;
 	}
 
 	@Override

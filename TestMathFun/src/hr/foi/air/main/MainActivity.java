@@ -1,5 +1,7 @@
 package hr.foi.air.main;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
 import air.testmathfun.R;
 import android.content.Intent;
 import android.view.Menu;
@@ -17,10 +19,11 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	public void initView() {
-		Button btPromjeni = (Button) findViewById(R.id.button1);
-		Button btnPravila = (Button) findViewById(R.id.btnPravila);
+		ButtonRectangle btnPromjeni = (ButtonRectangle) findViewById(R.id.button1);
+		ButtonRectangle btnPravila = (ButtonRectangle) findViewById(R.id.btnPravila);
+		
 
-		btPromjeni.setOnClickListener(new OnClickListener() {
+		btnPromjeni.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

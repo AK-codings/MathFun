@@ -29,11 +29,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="94dp"
+        android:layout_marginBottom="30dp"
         android:layout_marginRight="24dp"
-        android:background="@drawable/crveni_okvir"
         android:gravity="center"
         android:text="Kreni"
+        android:background="@drawable/zeleni_okvir"
         android:textColor="@android:color/white" />
 
     <ImageView

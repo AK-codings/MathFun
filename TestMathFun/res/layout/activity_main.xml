@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,63 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="hr.foi.air.main.MainActivity" >
 
-    <Button
-        android:id="@+id/button4"
-        style="android:buttonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
-        android:background="@drawable/plavi_okvir"
-        android:text="IZLAZ"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/button2"
-        android:layout_marginBottom="49dp"
-        android:background="@drawable/crveni_okvir"
-        android:text="KRENI"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_centerVertical="true"
-        android:background="@drawable/plavi_okvir"
-        android:minHeight="32dip"
-        android:text="Promjeni igrača"
-        android:textColor="@android:color/white"
-        android:textStyle="@android:color/white" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="17dp"
-        android:background="@drawable/narancasti_okovir"
-        android:minHeight="32dip"
-        android:text="Prikaži rezultate"
-        android:textColor="@android:color/white" />
-    
-    <Button
-        android:id="@+id/btnPravila"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="17dp"
-        android:background="@drawable/zeleni_okvir"
-        android:minHeight="32dip"
-        android:text="Pravila"
-        android:textColor="@android:color/white" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -74,15 +18,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:src="@drawable/math" />
-
+    
+    
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
         android:shadowColor="@android:color/black"
+        android:layout_below="@+id/imageView1"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="10"
@@ -90,13 +35,70 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="30sp" />
+    
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/button1"
+        materialdesign:rippleSpeed="400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_below="@+id/textView1"
+        android:minHeight="32dip"
+        android:text="Promijeni igrača"
+        android:textColor="@android:color/white"
+        android:textStyle="@android:color/white" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/button2"
+        materialdesign:rippleSpeed="400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="17dp"
+        android:minHeight="32dip"
+        android:text="Prikaži rezultate"
+        android:textColor="@android:color/white" />
+    
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/btnPravila"
+        materialdesign:rippleSpeed="400"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="17dp"
+        android:minHeight="32dip"
+        android:text="Pravila" />
+
 
     <ImageView
         android:id="@+id/imageView2"
+        android:layout_below="@+id/btnPravila"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
         android:layout_centerHorizontal="true"
         android:src="@drawable/brojevi" />
 
+    <Button
+        android:id="@+id/button4"
+        style="android:buttonStyle"
+        android:layout_below="@+id/btnPravila"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/crveni_okvir"
+        android:text="IZLAZ"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_below="@+id/btnPravila"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/zeleni_okvir"
+        android:text="KRENI"
+        android:textColor="@android:color/white" />
+    
 </RelativeLayout>
