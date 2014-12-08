@@ -6,44 +6,59 @@ import java.util.Random;
 public class Generator_pitanja {
 
 	private final static int velicina_polja = 5;
-	static int a, b, t, s;
-	static int brojevi[] = new int[velicina_polja];
-	static char simboli[] = new char[velicina_polja];
-	static Random rn = new Random();
-	static Pitanje pitanje = new Pitanje();
+	private static int a, b, t, s;
+	private static int brojevi[];
+	private static char simboli[] = new char[velicina_polja];
+	private static Random rn = new Random();
+	private static Pitanje pitanje;
 
-	private Generator_pitanja() {
+	public Generator_pitanja() {
 	}
 
 	// metoda koja vraæa odreðen broj pitanja te razinu pitanja
 	public static ArrayList<Pitanje> generiraj(int brojPitanja, int razina) {
 		ArrayList<Pitanje> listaPitanja = new ArrayList<Pitanje>();
-		if (razina == 1)
+		switch (razina) {
+		case 1:
 			for (int i = 0; i < brojPitanja; i++)
 				listaPitanja.add(razina1());
-		if (razina == 2)
+			break;
+		case 2:
 			for (int i = 0; i < brojPitanja; i++)
 				listaPitanja.add(razina2());
-		if (razina == 3)
+			break;
+		case 3:
 			for (int i = 0; i < brojPitanja; i++)
-				listaPitanja.add(razina3());
-		if (razina == 4)
+				listaPitanja.add(razina3());	
+			break;
+		case 4:
 			for (int i = 0; i < brojPitanja; i++)
 				listaPitanja.add(razina4());
-		if (razina == 5)
+			break;
+		case 5:
 			for (int i = 0; i < brojPitanja; i++)
 				listaPitanja.add(razina5());
-		if (razina == 6)
+			break;
+		case 6:
 			for (int i = 0; i < brojPitanja; i++)
 				listaPitanja.add(razina6());
-		if (razina == 7)
+			break;
+		case 7:
 			for (int i = 0; i < brojPitanja; i++)
 				listaPitanja.add(razina7());
+			break;
+			
+		default:
+			break;
+		}
 		return listaPitanja;
 	}
 
 	// metoda koja stvara pitanja razine jedan
 	private static Pitanje razina1() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
 		brojevi[0] = a;
@@ -58,6 +73,9 @@ public class Generator_pitanja {
 
 	// metoda koja stvara pitanja razine dva
 	private static Pitanje razina2() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
 		if (b > a) {
@@ -77,6 +95,9 @@ public class Generator_pitanja {
 
 	// metoda koja stvara pitanja razine tri
 	private static Pitanje razina3() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
 		s = rn.nextInt(2);
@@ -102,6 +123,9 @@ public class Generator_pitanja {
 
 	// metoda koja stvara pitanja razine èetiri
 	private static Pitanje razina4() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(30) + 1;
 		b = rn.nextInt(30) + 1;
 		s = rn.nextInt(2);
@@ -127,6 +151,9 @@ public class Generator_pitanja {
 
 	// metoda koja stvara pitanja razine pet
 	private static Pitanje razina5() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(50) + 1;
 		b = rn.nextInt(50) + 1;
 		s = rn.nextInt(2);
@@ -152,6 +179,9 @@ public class Generator_pitanja {
 
 	// metoda koja stvara pitanja razine šest
 	private static Pitanje razina6() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(50) + 1;
 		b = rn.nextInt(50) + 1;
 		s = rn.nextInt(4);
@@ -197,6 +227,9 @@ public class Generator_pitanja {
 
 	// metoda koja stvara pitanja razine sedam
 	private static Pitanje razina7() {
+		pitanje=new Pitanje();
+		brojevi=new int[velicina_polja];
+		
 		a = rn.nextInt(100) + 1;
 		b = rn.nextInt(100) + 1;
 		s = rn.nextInt(4);
