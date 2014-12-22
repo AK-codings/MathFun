@@ -6,18 +6,15 @@ import com.activeandroid.annotation.Table;
 
 @Table(name = "Difficulties")
 public class Difficulties extends Model{
-	@Column(name = "id")
-	public long id;
 	@Column(name = "Name")
-	public String name;
+	private String name;
 	
 	public Difficulties(){
 		super();
 	}
 	//konstruktor
-	public Difficulties(long id, String name){
+	public Difficulties(String name){
 		super();
-		this.id=id;
 		this.name=name;
 	}
 }

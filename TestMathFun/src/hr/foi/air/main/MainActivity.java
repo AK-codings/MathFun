@@ -3,6 +3,7 @@ package hr.foi.air.main;
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import air.testmathfun.R;
+import android.app.Dialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements OnClickListener {
+	private ButtonRectangle btIgraj;
+	private ButtonRectangle btPravila;
 	
 	@Override
 	public int getLayout() {
@@ -19,27 +22,11 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	public void initView() {
-		ButtonRectangle btnPromjeni = (ButtonRectangle) findViewById(R.id.button1);
-		ButtonRectangle btnPravila = (ButtonRectangle) findViewById(R.id.btnPravila);
-		
+		btIgraj = (ButtonRectangle) findViewById(R.id.btIgraj);
+		btPravila = (ButtonRectangle) findViewById(R.id.btPravila);
+		btIgraj.setOnClickListener(this);			
+		btPravila.setOnClickListener(this);
 
-		btnPromjeni.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				startActivity(new Intent(getBaseContext(), Nickname.class));
-			}
-		});
-
-		btnPravila.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				startActivity(new Intent(getBaseContext(), Pravila.class));
-			}
-		});
 
 		// Thread thread = new Thread(){
 		// public void run() {
@@ -57,6 +44,7 @@ public class MainActivity extends BaseActivity {
 		// };
 		// };
 		// thread.start();
+		
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,6 +63,21 @@ public class MainActivity extends BaseActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btIgraj:
+			startActivity(new Intent(getBaseContext(), Nickname.class));
+			break;
+		case R.id.btPravila:
+			startActivity(new Intent(getBaseContext(), Pravila.class));
+			break;
+		default:
+			break;
+		}
+		
 	}
 
 }

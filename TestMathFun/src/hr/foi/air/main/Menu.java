@@ -18,7 +18,7 @@ public class Menu extends ListActivity {
 		
 		
 		
-		Toast.makeText(getBaseContext(), "Nickname: "+getIntent().getExtras().getString("ime"), Toast.LENGTH_LONG).show();
+		Toast.makeText(getBaseContext(), "Dobrodošli: "+getIntent().getExtras().getString("ime"), Toast.LENGTH_LONG).show();
 		
 		setListAdapter(new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1, menu));
 		

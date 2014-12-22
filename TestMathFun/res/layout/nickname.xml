@@ -1,111 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:padding="9dp">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView4"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/holo_green_light"
-        android:ems="10"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginRight="24dp"
-        android:gravity="center"
-        android:text="Kreni"
-        android:background="@drawable/zeleni_okvir"
-        android:textColor="@android:color/white" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/brojevi" />
-
-    <TextView
-        android:id="@+id/textView4"
+     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="33dp"
         android:gravity="center_vertical"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="5"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
         android:text="UNESITE IME NOVOG IGRAČA"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="#1E88E5"
         android:textSize="20sp" />
-
+        
+    <EditText
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="30sp"
+        android:id="@+id/etUnesiIgraca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_blue"
+        android:ems="10"
+        android:padding="10dp"
+        android:textColor="#1E88E5"
+        android:textSize="17sp"
+        android:hint="Unesite ime"
+        android:textColorHint="#BDBCBC"
+        android:textCursorDrawable="@null"
+        android:typeface="sans" />
+    
+    
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="19dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="5"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
         android:text="ILI IZABERI POSTOJEĆEG SA LISTE"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="17sp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
+        android:textColor="#1E88E5"
+        android:textSize="20sp" />
+    
+     <ListView    
+        android:id="@+id/lvListIgraca"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/matija" />
+        android:orientation="vertical" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/imageView3"
-        android:src="@drawable/marko" />
+	  <com.gc.materialdesign.views.ButtonRectangle
+	        android:id="@+id/btKreni"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Kreni"
+	        materialdesign:rippleSpeed="400"/>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_below="@+id/imageView2"
-        android:src="@drawable/antonio" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_below="@+id/imageView4"
-        android:src="@drawable/jurica" />
-
-</RelativeLayout>
+</LinearLayout>
