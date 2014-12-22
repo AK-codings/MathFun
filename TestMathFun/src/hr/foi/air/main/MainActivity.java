@@ -1,5 +1,7 @@
 package hr.foi.air.main;
 
+import java.util.Date;
+
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import air.testmathfun.R;
@@ -26,7 +28,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		btPravila = (ButtonRectangle) findViewById(R.id.btPravila);
 		btIgraj.setOnClickListener(this);			
 		btPravila.setOnClickListener(this);
-
+		
 
 		// Thread thread = new Thread(){
 		// public void run() {

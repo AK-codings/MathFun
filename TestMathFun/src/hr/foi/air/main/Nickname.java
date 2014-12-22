@@ -1,26 +1,36 @@
 package hr.foi.air.main;
-import java.util.ArrayList;
+import hr.foi.air.db.Users;
 
-import com.gc.materialdesign.views.ButtonRectangle;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import air.testmathfun.R;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Nickname extends BaseActivity implements OnClickListener {
+import com.gc.materialdesign.views.ButtonRectangle;
+
+public class Nickname extends BaseActivity implements OnClickListener, OnItemClickListener {
 	private EditText et;
 	private ButtonRectangle bt;
 	private ListView lvIgraci;
 	private AlertDialog.Builder dialog;
+	private List<Users> listaIgraca;
+	private ArrayList<String> alImenaIgraca;
+	private ArrayAdapter<String> aaImenaIgraca;
+	private Intent intent;
+	private Users igrac;
 	
 	@Override
 	public int getLayout() {
@@ -33,23 +43,36 @@ public class Nickname extends BaseActivity implements OnClickListener {
 		bt = (ButtonRectangle) findViewById(R.id.btKreni);
 		et = (EditText) findViewById(R.id.etUnesiIgraca);
 		lvIgraci=(ListView) findViewById(R.id.lvListIgraca);
-		populateList();
+		lvIgraci.setOnItemClickListener(this);
 		bt.setOnClickListener(this);
+		populateList();
+		
 }
 
 	private void populateList() {
-		ArrayList<String> alImenaIgraca=new ArrayList<String>();
-		alImenaIgraca.add("Prvi igrac");
-		alImenaIgraca.add("Drugi igrac");
-		alImenaIgraca.add("Treci igrac");
-		ArrayAdapter<String> aaImenaIgraca=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alImenaIgraca);
+		if (Users.getNumberOfPlayers() < 4) {
+			Users user1=new Users("Antonio Markoc", 19);
+			user1.save();
+			Users user2=new Users("Matija Nedjeral", 12);
+			user2.save();
+			Users user3=new Users("Borna Farkas", 17);
+			user3.save();		
+			Users user4=new Users("Mislav Šantek", 15);
+			user4.save();		
+		}
+		
+		listaIgraca=Users.getLastPlayers();
+		alImenaIgraca=new ArrayList<String>();
+		for (int i = 0; i < listaIgraca.size(); i++) {
+			alImenaIgraca.add(listaIgraca.get(i).getName());
+		}
+		aaImenaIgraca=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alImenaIgraca);
 		lvIgraci.setAdapter(aaImenaIgraca);
 		
 	}
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.btKreni:
 			if (et.getText().toString().trim().equals("")) {
@@ -71,7 +94,8 @@ public class Nickname extends BaseActivity implements OnClickListener {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Intent intent = new Intent(getBaseContext(), Menu.class);
+				createPlayer();
+				intent= new Intent(getBaseContext(), Menu.class);
 				intent.putExtra("ime", et.getText().toString());
 				startActivity(intent);
 			}
@@ -84,5 +108,25 @@ public class Nickname extends BaseActivity implements OnClickListener {
 			}
 		});
 		dialog.show();				
+	}
+	
+	private void createPlayer() {
+		Users.setAllToInactive();
+		Users newUser=new Users(et.getText().toString(), new Date().getTime());
+		newUser.setActive(1);
+		newUser.save();
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		Users.setAllToInactive();
+		igrac=listaIgraca.get(position);
+		igrac.setActive(1);
+		igrac.setLastPlayed(new Date().getTime());
+		igrac.save();
+		intent= new Intent(getBaseContext(), Menu.class);
+		intent.putExtra("ime", igrac.getName());
+		startActivity(intent);		
+		
 	}
 }

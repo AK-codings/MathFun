@@ -8,11 +8,11 @@ import com.activeandroid.annotation.Table;
 public class Highscore extends Model{
 	@Column(name = "highscore")
 	private int highscore;
-	@Column(name = "id")
+	@Column(name = "user_id")
 	private Users user_id;
-	@Column(name = "id")
+	@Column(name = "module_id")
 	private Modules module_id;
-	@Column(name = "id")
+	@Column(name = "difficulty_id")
 	private Difficulties difficulty_id;
 	
 	public Highscore(){

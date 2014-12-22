@@ -6,6 +6,7 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
+import com.activeandroid.query.Update;
 
 @Table(name = "Users")
 public class Users extends Model{
@@ -13,7 +14,15 @@ public class Users extends Model{
 	private String name;
 	@Column(name="last_played")
 	private long last_played;
-	
+	@Column(name="active")
+	private int active;
+		
+	public String getName() {
+		return name;
+	}
+	public long getLast_played() {
+		return last_played;
+	}
 	public Users(){
 		super();
 	}
@@ -22,8 +31,28 @@ public class Users extends Model{
 		super();
 		this.name=name;
 		this.last_played=last_played;
+		this.active=0;
 	}
-	public static List<Users> getLastThreePlayers(){
-		return new Select().from(Users.class).orderBy("last_played ASC").limit(3).execute();
+	public int getActive() {
+		return active;
+	}
+	public void setActive(int active) {
+		this.active = active;
+	}
+	public void setLastPlayed(long last_played){
+		this.last_played=last_played;
+	}
+	
+	
+	
+	
+	public static List<Users> getLastPlayers(){
+		return new Select().from(Users.class).orderBy("last_played DESC").limit(4).execute();
+	}
+	public static int getNumberOfPlayers(){
+		return new Select().from(Users.class).count();
+	}
+	public static void setAllToInactive(){
+		new Update(Users.class).set("active=?",0).execute();;
 	}
 }
