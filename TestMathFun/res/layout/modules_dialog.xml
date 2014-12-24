@@ -5,23 +5,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvImeRazine"
+        android:layout_gravity="center"
+        android:text=""
+        android:textSize="24sp"
+        android:textColor="#1E88E5"/>
+        
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btModul1"
         android:layout_width="match_parent"
-        materialdesign:rippleSpeed="400"
+        materialdesign:rippleSpeed="100"
         android:layout_height="wrap_content"
         android:text="Točno / Netočno Zadatci" />
       
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btModul2"
         android:layout_width="match_parent"
-        materialdesign:rippleSpeed="400"
+        materialdesign:rippleSpeed="100"
         android:layout_height="wrap_content"
         android:text="Upisati točno rješenje" />
     
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btModul3"
-        materialdesign:rippleSpeed="400"
+        materialdesign:rippleSpeed="100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Drag and Drop" />

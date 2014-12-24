@@ -38,7 +38,7 @@
     
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btIgraj"
-        materialdesign:rippleSpeed="400"
+        materialdesign:rippleSpeed="100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button4"
@@ -50,7 +50,7 @@
     
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btPravila"
-        materialdesign:rippleSpeed="400"
+        materialdesign:rippleSpeed="100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btIgraj"
@@ -60,7 +60,7 @@
     
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btRezultati"
-        materialdesign:rippleSpeed="400"
+        materialdesign:rippleSpeed="100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btPravila"

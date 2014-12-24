@@ -14,6 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class OdabirRazine extends BaseActivity implements OnItemClickListener, OnClickListener{
@@ -23,6 +25,7 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	private ListView lvRazine;
 	private Dialog dialog;
 	private ButtonRectangle btModul1, btModul2, btModul3;
+	private TextView tvImeRazine;
 	
 	@Override
 	public int getLayout() {
@@ -32,6 +35,8 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	@Override
 	public void initView() {
 
+		Toast.makeText(this, "Igraè: "+getIntent().getExtras().getString("ime"), Toast.LENGTH_SHORT).show();
+		
 		adapter=new RazineAdapter(getBaseContext(), Difficulties.getAllDifficulties());
 		lvRazine=(ListView) findViewById(R.id.lvRazine);
 		lvRazine.setAdapter(adapter);
@@ -46,10 +51,10 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 		difficulties=(Difficulties) lvRazine.getItemAtPosition(position);
 		difficulties.setActive(1);
 		difficulties.save();
-		createDialog();
+		createDialog(difficulties.getName());
 	}
 
-	private void createDialog() {
+	private void createDialog(String difficultiesName) {
 		dialog=new Dialog(this);
 		dialog.setContentView(R.layout.modules_dialog);
 		dialog.setTitle("Odaberi vrstu zadatka");
@@ -58,6 +63,9 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 		btModul1=(ButtonRectangle) dialog.findViewById(R.id.btModul1);
 		btModul2=(ButtonRectangle) dialog.findViewById(R.id.btModul2);
 		btModul3=(ButtonRectangle) dialog.findViewById(R.id.btModul3);
+		tvImeRazine=(TextView) dialog.findViewById(R.id.tvImeRazine);
+		
+		tvImeRazine.setText("-"+difficultiesName+"-");
 		
 		btModul1.setOnClickListener(this);
 		btModul2.setOnClickListener(this);
