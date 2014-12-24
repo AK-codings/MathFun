@@ -47,7 +47,8 @@ public class Users extends Model{
 	
 	
 	public static List<Users> getLastPlayers(){
-		return new Select().from(Users.class).orderBy("last_played DESC").limit(4).execute();
+		//return new Select().from(Users.class).orderBy("last_played DESC").limit(4).execute();  -> za limit
+		return new Select().from(Users.class).orderBy("last_played DESC").execute();
 	}
 	public static int getNumberOfPlayers(){
 		return new Select().from(Users.class).count();
@@ -55,4 +56,7 @@ public class Users extends Model{
 	public static void setAllToInactive(){
 		new Update(Users.class).set("active=?",0).execute();;
 	}
+	public static Users getUser(String name){
+		return new Select().from(Users.class).where("name=?",name).executeSingle();
+	}	
 }

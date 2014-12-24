@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/ivSlikaRazine"
+        android:layout_width="52dp"
+        android:layout_height="72dp"
+        android:src="@drawable/jedan" />
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+        
+        <TextView android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:text="Razina "
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#1E88E5"
+            android:shadowColor="#1E88E5"
+            android:textSize="25sp"
+	        android:shadowDx="2"
+	        android:shadowDy="2"
+	        android:shadowRadius="3"
+            android:id="@+id/tvRazina"/>
+        
+        <TextView android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:id="@+id/tvOpisRazine"
+            android:text="Opis razine"/>        
+    </LinearLayout>
+
+</LinearLayout>

@@ -25,7 +25,7 @@
         </activity>
         
         <activity android:name="hr.foi.air.main.Nickname"></activity>
-        <activity android:name="hr.foi.air.main.Menu"></activity>
+        <activity android:name="hr.foi.air.main.OdabirRazine"></activity>
         <activity android:name="hr.foi.air.main.Razina_1"></activity>
         <activity android:name="hr.foi.air.main.Rezultat"/>  
         <activity android:name="hr.foi.air.main.Pravila"/>

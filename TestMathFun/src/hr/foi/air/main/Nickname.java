@@ -31,6 +31,7 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 	private ArrayAdapter<String> aaImenaIgraca;
 	private Intent intent;
 	private Users igrac;
+	private boolean flag;
 	
 	@Override
 	public int getLayout() {
@@ -94,10 +95,15 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				createPlayer();
-				intent= new Intent(getBaseContext(), Menu.class);
-				intent.putExtra("ime", et.getText().toString());
-				startActivity(intent);
+				flag=createPlayer();
+				if(flag==true){
+					intent= new Intent(getBaseContext(), OdabirRazine.class);
+					intent.putExtra("ime", et.getText().toString());
+					startActivity(intent);					
+				}else{
+					dialog.dismiss();
+				}
+
 			}
 		});
 		dialog.setNegativeButton("Ne", new DialogInterface.OnClickListener() {
@@ -110,11 +116,17 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		dialog.show();				
 	}
 	
-	private void createPlayer() {
+	private  boolean createPlayer() {
 		Users.setAllToInactive();
-		Users newUser=new Users(et.getText().toString(), new Date().getTime());
-		newUser.setActive(1);
-		newUser.save();
+		if(Users.getUser(et.getText().toString()) == null){
+			Users newUser=new Users(et.getText().toString(), new Date().getTime());
+			newUser.setActive(1);
+			newUser.save();
+			return true;
+		}else{
+			Toast.makeText(getBaseContext(), "Taj korisnik veæ postoji!", Toast.LENGTH_SHORT).show();
+			return false;
+		}
 	}
 
 	@Override
@@ -124,7 +136,7 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		igrac.setActive(1);
 		igrac.setLastPlayed(new Date().getTime());
 		igrac.save();
-		intent= new Intent(getBaseContext(), Menu.class);
+		intent= new Intent(getBaseContext(), OdabirRazine.class);
 		intent.putExtra("ime", igrac.getName());
 		startActivity(intent);		
 		
