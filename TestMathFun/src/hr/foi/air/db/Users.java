@@ -54,7 +54,7 @@ public class Users extends Model{
 		return new Select().from(Users.class).count();
 	}
 	public static void setAllToInactive(){
-		new Update(Users.class).set("active=?",0).execute();;
+		new Update(Users.class).set("active=?",0).execute();
 	}
 	public static Users getUser(String name){
 		return new Select().from(Users.class).where("name=?",name).executeSingle();

@@ -1,6 +1,11 @@
 package hr.foi.air.main;
 
+import hr.foi.air.db.Difficulties;
+import hr.foi.air.db.Modules;
+import hr.foi.air.db.Users;
+
 import java.util.Date;
+import java.util.List;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 
@@ -16,6 +21,8 @@ import android.widget.Button;
 public class MainActivity extends BaseActivity implements OnClickListener {
 	private ButtonRectangle btIgraj;
 	private ButtonRectangle btPravila;
+	private List<Difficulties> listaRazina;
+	private List<Modules> listaModula;
 	
 	@Override
 	public int getLayout() {
@@ -29,37 +36,48 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		btIgraj.setOnClickListener(this);			
 		btPravila.setOnClickListener(this);
 		
-
-		// Thread thread = new Thread(){
-		// public void run() {
-		// try {
-		// MediaPlayer mp=new MediaPlayer().create(getBaseContext(),
-		// R.raw.math);
-		// mp.start();
-		// Thread.sleep(4000);
-		// Intent intent=new Intent(getBaseContext(), nickname.class);
-		// startActivity(intent);
-		// } catch (InterruptedException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		// };
-		// };
-		// thread.start();
+		prepareDatabase();
+	}
+	
+	//Postavi database ako je prazan
+	private void prepareDatabase() {
+		if (Users.getNumberOfPlayers() == 0) {
+			Users user1=new Users("Antonio Markoc", 19);
+			user1.save();
+			Users user2=new Users("Matija Nedjeral", 12);
+			user2.save();
+			Users user3=new Users("Borna Farkas", 17);
+			user3.save();		
+			Users user4=new Users("Mislav Santek", 15);
+			user4.save();		
+		}
+		
+		if(Difficulties.getAllDifficulties().size() != Difficulties.createDifficultiesList().size()){
+			Difficulties.deleteDifficulties();
+			listaRazina=Difficulties.createDifficultiesList();
+			for (int i = 0; i < listaRazina.size(); i++) {
+				listaRazina.get(i).save();
+			}
+		}
+		
+		if(Modules.getAllModules().size() != Modules.createModulesList().size()){
+			Modules.deleteModules();
+			listaModula=Modules.createModulesList();
+			for (int i = 0; i < listaModula.size(); i++) {
+				listaModula.get(i).save();
+			}
+		}
 		
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;

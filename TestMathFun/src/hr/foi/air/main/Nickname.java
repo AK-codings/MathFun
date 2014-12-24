@@ -51,16 +51,6 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 }
 
 	private void populateList() {
-		if (Users.getNumberOfPlayers() < 4) {
-			Users user1=new Users("Antonio Markoc", 19);
-			user1.save();
-			Users user2=new Users("Matija Nedjeral", 12);
-			user2.save();
-			Users user3=new Users("Borna Farkas", 17);
-			user3.save();		
-			Users user4=new Users("Mislav Šantek", 15);
-			user4.save();		
-		}
 		
 		listaIgraca=Users.getLastPlayers();
 		alImenaIgraca=new ArrayList<String>();
