@@ -1,5 +1,6 @@
 package hr.foi.air.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gc.materialdesign.views.ButtonRectangle;
@@ -7,8 +8,12 @@ import com.gc.materialdesign.views.ButtonRectangle;
 import hr.foi.air.adapter.RazineAdapter;
 import hr.foi.air.db.Difficulties;
 import hr.foi.air.db.Modules;
+import hr.foi.air.generator.Generator_pitanja;
+import hr.foi.air.generator.Pitanje;
 import air.testmathfun.R;
 import android.app.Dialog;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -26,6 +31,8 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	private Dialog dialog;
 	private ButtonRectangle btModul1, btModul2, btModul3;
 	private TextView tvImeRazine;
+	private String razina;
+	private Intent intent;
 	
 	@Override
 	public int getLayout() {
@@ -49,6 +56,7 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Difficulties.setAllToInactive();
 		difficulties=(Difficulties) lvRazine.getItemAtPosition(position);
+		razina=difficulties.getName();
 		difficulties.setActive(1);
 		difficulties.save();
 		createDialog(difficulties.getName());
@@ -70,21 +78,30 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 		btModul1.setOnClickListener(this);
 		btModul2.setOnClickListener(this);
 		btModul3.setOnClickListener(this);
+
+		
 	}
 
 	@Override
 	public void onClick(View v) {
 		Modules.setAllToInactive();
+		intent=new Intent(getBaseContext(), Zadatak.class);
+		intent.putExtra("razina", razina);
 		
 		switch (v.getId()) {
 		case R.id.btModul1:
 			Modules.setToActive("Modul_1");
+			intent.putExtra("modul", 1);
+			startActivity(intent);
 			break;
 		case R.id.btModul2:
 			Modules.setToActive("Modul_2");
+			intent.putExtra("modul", 2);
+			startActivity(intent);
 			break;
 		case R.id.btModul3:
-			Modules.setToActive("Modul_3");
+			intent.putExtra("modul", 3);
+			startActivity(intent);
 			break;
 		default:
 			break;

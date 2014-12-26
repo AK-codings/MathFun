@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -88,7 +87,7 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 				flag=createPlayer();
 				if(flag==true){
 					intent= new Intent(getBaseContext(), OdabirRazine.class);
-					intent.putExtra("ime", et.getText().toString());
+					intent.putExtra("ime", strToUpper(et.getText().toString()));
 					startActivity(intent);					
 				}else{
 					dialog.dismiss();
@@ -108,8 +107,8 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 	
 	private  boolean createPlayer() {
 		Users.setAllToInactive();
-		if(Users.getUser(et.getText().toString()) == null){
-			Users newUser=new Users(et.getText().toString(), new Date().getTime());
+		if(Users.getUser(strToUpper(et.getText().toString())) == null){
+			Users newUser=new Users(strToUpper(et.getText().toString()), new Date().getTime());
 			newUser.setActive(1);
 			newUser.save();
 			return true;
@@ -131,4 +130,24 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		startActivity(intent);		
 		
 	}
+	
+   private String strToUpper(String source){
+	    source=source.toLowerCase();
+        boolean cap = true;
+        char[]  out = source.toCharArray();
+        int i, len = source.length();
+        for(i=0; i<len; i++){
+            if(Character.isWhitespace(out[i])){
+                cap = true;
+                continue;
+            }
+            if(cap){
+                out[i] = Character.toUpperCase(out[i]);
+                cap = false;
+            }
+        }
+        return new String(out);
+    }
+	
+	
 }
