@@ -53,9 +53,10 @@ public class Zadatak extends BaseActivity {
 		
 	}
 
-//	@Override
-//		public void onBackPressed() {
-//			Toast.makeText(getBaseContext(), "Morate riješiti zadatak do kraja!", Toast.LENGTH_SHORT).show();
-//		}
-//	
+	@Override
+	public void onBackPressed() {
+		Toast.makeText(getBaseContext(), "Prekid zadatka", Toast.LENGTH_SHORT).show();
+		super.onBackPressed();
+	}
+
 };
