@@ -31,7 +31,7 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	private Dialog dialog;
 	private ButtonRectangle btModul1, btModul2, btModul3;
 	private TextView tvImeRazine;
-	private String razina;
+	private long razina;
 	private Intent intent;
 	
 	@Override
@@ -56,7 +56,7 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Difficulties.setAllToInactive();
 		difficulties=(Difficulties) lvRazine.getItemAtPosition(position);
-		razina=difficulties.getName();
+		razina=difficulties.getId();
 		difficulties.setActive(1);
 		difficulties.save();
 		createDialog(difficulties.getName());
@@ -100,6 +100,7 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 			startActivity(intent);
 			break;
 		case R.id.btModul3:
+			Modules.setToActive("Modul_3");
 			intent.putExtra("modul", 3);
 			startActivity(intent);
 			break;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvBrojPitanja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textColor="#1E88E5"
+        android:textSize="15sp"
+        android:shadowRadius="3"
+        android:layout_gravity="center_horizontal"                
+        android:text="Pitanje broj N" />
+
+    <TextView
+        android:id="@+id/tvPitanje"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal" 
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:text="Pitanje...Koliko je N + M" />
+    
+    <EditText android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etOdgovor"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:inputType="numberSigned"
+        android:background="@drawable/border_blue"
+        android:hint="Odgovor"/>
+    
+	  <com.gc.materialdesign.views.ButtonRectangle
+	        android:id="@+id/btIducePitanje"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Iduće pitanje"
+	        materialdesign:rippleSpeed="100"/>
+
+</LinearLayout>

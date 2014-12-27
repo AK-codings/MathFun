@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvBrojPitanja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Pitanje broj N"
+        android:textColor="#1E88E5"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvPitanje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="5+10=15" />
+
+    <LinearLayout android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        
+	    <com.gc.materialdesign.views.ButtonRectangle
+	       android:id="@+id/btTocno"
+	       android:layout_width="match_parent"
+	       android:layout_weight="1"
+	       android:layout_height="wrap_content"
+	       android:text="Točno"
+	       materialdesign:rippleSpeed="100" />
+	
+	   <com.gc.materialdesign.views.ButtonRectangle
+	       android:layout_weight="1"
+	       android:id="@+id/btNetocno"
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:text="Netočno"
+	       materialdesign:rippleSpeed="100" />       
+	       
+    </LinearLayout>
+
+</LinearLayout>
