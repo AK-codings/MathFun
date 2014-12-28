@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
         android:id="@+id/tvRazinaZadatak"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:shadowColor="#1E88E5"
         android:shadowDx="2"
         android:shadowDy="2"
-        android:textColor="#1E88E5"
-        android:text="Razina N"
-        android:textSize="30sp"
         android:shadowRadius="3"
-        android:layout_gravity="center_horizontal"/>
+        android:text="Razina N"
+        android:textColor="#1E88E5"
+        android:textSize="30sp" />
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="180dp" >
     </FrameLayout>
-    
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/btIducePitanje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iduće pitanje"
+        materialdesign:rippleSpeed="100" />
+
+    <TextView
+        android:id="@+id/tvVrijeme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Razina N"
+        android:textColor="#1E88E5"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:background="@drawable/border_blue"
+        android:textSize="30sp" />
+
 </LinearLayout>

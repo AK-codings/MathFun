@@ -12,11 +12,13 @@ import com.gc.materialdesign.views.ButtonRectangle;
 import air.testmathfun.R;
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.ExifInterface;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 	private ButtonRectangle btIgraj;
@@ -100,4 +102,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		
 	}
 
+	@Override
+	public void onBackPressed() {
+		finish();
+		return;
+	}
 }

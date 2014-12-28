@@ -84,4 +84,9 @@ public class Difficulties extends Model{
 	public static void setAllToInactive(){
 		new Update(Difficulties.class).set("active=?",0).execute();
 	}
+	
+	public static Difficulties getActiveDifficulties(){
+		return new Select().from(Difficulties.class).where("active=?",1).executeSingle();
+	}
+
 }

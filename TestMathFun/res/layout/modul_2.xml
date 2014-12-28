@@ -23,6 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal" 
         android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:layout_height="wrap_content"
         android:text="Pitanje...Koliko je N + M" />
     
@@ -34,12 +36,7 @@
         android:inputType="numberSigned"
         android:background="@drawable/border_blue"
         android:hint="Odgovor"/>
-    
-	  <com.gc.materialdesign.views.ButtonRectangle
-	        android:id="@+id/btIducePitanje"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="Iduće pitanje"
-	        materialdesign:rippleSpeed="100"/>
+
+
 
 </LinearLayout>

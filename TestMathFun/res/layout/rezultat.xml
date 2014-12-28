@@ -1,43 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+    <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="205dp"
-        android:text="TextView" />
+        android:id="@id/tvRazina"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textColor="#1E88E5"
+        android:textSize="25sp"
+        android:shadowRadius="3"
+        android:text="Razina N"
+        android:layout_gravity="center_horizontal"/>
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
+   	<TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="93dp"
-        android:src="@drawable/bodovi" />
-
-    <RatingBar
-        android:id="@+id/ratingBar1"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvModul"
+        android:shadowColor="#1E88E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textColor="#1E88E5"
+        android:textSize="15sp"
+        android:shadowRadius="3"
+        android:text="Modul N"
+        android:layout_gravity="center_horizontal"/>
+    
+	<TextView android:layout_width="wrap_content"        
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:shadowRadius="3"
+        android:text="Najbolji rezultati"
+        android:layout_gravity="center_horizontal"/>
+        
+	<LinearLayout android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    
+		<ListView android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:id="@+id/lvNajboljiIgraci">
+		</ListView>
+		
+	 	<ListView android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:id="@+id/lvNajboljiRezultati">
+	 	</ListView>       	    
+	 	
+	</LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:src="@drawable/brojevi" />
-
-</RelativeLayout>
+	  <com.gc.materialdesign.views.ButtonRectangle
+	        android:id="@+id/btNatrag"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Natrag"
+	        materialdesign:rippleSpeed="100"/>
+    
+</LinearLayout>

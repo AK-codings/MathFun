@@ -8,7 +8,7 @@ public class Generator_pitanja {
 	private final static int velicina_polja = 5;
 	private static int a, b, t, s;
 	private static int brojevi[];
-	private static char simboli[] = new char[velicina_polja];
+	private static char simboli[];
 	private static Random rn = new Random();
 	private static Pitanje pitanje;
 
@@ -50,7 +50,7 @@ public class Generator_pitanja {
 			
 		default:
 			break;
-		}
+		}	
 		return listaPitanja;
 	}
 
@@ -58,6 +58,7 @@ public class Generator_pitanja {
 	private static Pitanje razina1() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
@@ -75,6 +76,7 @@ public class Generator_pitanja {
 	private static Pitanje razina2() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
@@ -97,18 +99,19 @@ public class Generator_pitanja {
 	private static Pitanje razina3() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
 		s = rn.nextInt(2);
-		if (s == 1) {
-			simboli[0] = '-';
-			brojevi[2] = a - b;
+		if (s==1) {
 			if (b > a) {
 				t = b;
 				b = a;
 				a = t;
 			}
+			simboli[0] = '-';
+			brojevi[2] = a-b;
 		} else {
 			simboli[0] = '+';
 			brojevi[2] = a + b;
@@ -118,6 +121,7 @@ public class Generator_pitanja {
 		simboli[1] = '=';
 		pitanje.setBrojevi(brojevi);
 		pitanje.setSimboli(simboli);
+				
 		return pitanje;
 	}
 
@@ -125,18 +129,19 @@ public class Generator_pitanja {
 	private static Pitanje razina4() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(30) + 1;
 		b = rn.nextInt(30) + 1;
 		s = rn.nextInt(2);
 		if (s == 1) {
-			simboli[0] = '-';
-			brojevi[2] = a - b;
 			if (b > a) {
 				t = b;
 				b = a;
 				a = t;
 			}
+			simboli[0] = '-';
+			brojevi[2] = a - b;
 		} else {
 			simboli[0] = '+';
 			brojevi[2] = a + b;
@@ -153,18 +158,19 @@ public class Generator_pitanja {
 	private static Pitanje razina5() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(50) + 1;
 		b = rn.nextInt(50) + 1;
 		s = rn.nextInt(2);
 		if (s == 1) {
-			simboli[0] = '-';
-			brojevi[2] = a - b;
 			if (b > a) {
 				t = b;
 				b = a;
 				a = t;
 			}
+			simboli[0] = '-';
+			brojevi[2] = a - b;
 		} else {
 			simboli[0] = '+';
 			brojevi[2] = a + b;
@@ -181,18 +187,19 @@ public class Generator_pitanja {
 	private static Pitanje razina6() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(50) + 1;
 		b = rn.nextInt(50) + 1;
 		s = rn.nextInt(4);
 		if (s == 1) {
-			simboli[0] = '-';
-			brojevi[2] = a - b;
 			if (b > a) {
 				t = b;
 				b = a;
 				a = t;
 			}
+			simboli[0] = '-';
+			brojevi[2] = a - b;
 			brojevi[0] = a;
 			brojevi[1] = b;
 		}
@@ -229,6 +236,7 @@ public class Generator_pitanja {
 	private static Pitanje razina7() {
 		pitanje=new Pitanje();
 		brojevi=new int[velicina_polja];
+		simboli= new char[velicina_polja];
 		
 		a = rn.nextInt(100) + 1;
 		b = rn.nextInt(100) + 1;

@@ -58,5 +58,9 @@ public class Users extends Model{
 	}
 	public static Users getUser(String name){
 		return new Select().from(Users.class).where("name=?",name).executeSingle();
-	}	
+	}
+	
+	public static Users getActiveUsers(){
+		return new Select().from(Users.class).where("active=?",1).executeSingle();
+	}
 }
