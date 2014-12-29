@@ -19,7 +19,7 @@ public class Modul_3 extends BaseFragment {
 
 	@Override
 	protected void initView(View view, Bundle bundle) {
-		Toast.makeText(getActivity().getBaseContext(), "JOS NIJE U FUNKCIJI", Toast.LENGTH_LONG).show();
+		//todo
 	}
 
 }

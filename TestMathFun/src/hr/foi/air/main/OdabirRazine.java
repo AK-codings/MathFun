@@ -100,9 +100,10 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 			startActivity(intent);
 			break;
 		case R.id.btModul3:
-			Modules.setToActive("Modul_3");
-			intent.putExtra("modul", 3);
-			startActivity(intent);
+			Toast.makeText(getBaseContext(), "Trenutno nije u funkciji!", Toast.LENGTH_SHORT).show();
+//			Modules.setToActive("Modul_3");
+//			intent.putExtra("modul", 3);
+//			startActivity(intent);
 			break;
 		default:
 			break;

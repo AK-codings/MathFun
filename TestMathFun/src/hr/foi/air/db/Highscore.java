@@ -57,8 +57,8 @@ public class Highscore extends Model{
 	public void setDifficulty_id(Difficulties difficulty_id) {
 		this.difficulty_id = difficulty_id;
 	}
-	public static List<Highscore> getBestFiveResults(Difficulties difficulties){
-		return new Select().from(Highscore.class).orderBy("highscore DESC").where("difficulty_id=?",difficulties.getId()).limit(5).execute();
+	public static List<Highscore> getBestFiveResults(Difficulties difficulties, Modules modul){
+		return new Select().from(Highscore.class).orderBy("highscore DESC").where("difficulty_id=? AND module_id=?",difficulties.getId(), modul.getId()).limit(5).execute();
 	}
 	public static void updateHightlist(Modules modules, Difficulties difficulties, Users users, int highscore){
 		new Update(Highscore.class).set("user_id=?,module_id=?,difficulty_id=?, highscore=?", users.getId(), modules.getId(), difficulties.getId(), highscore).where("highscore=?", getLowestHighscore().getHighscore()).execute();

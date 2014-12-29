@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Rezultat extends BaseActivity implements OnClickListener {
 	private Users users;
@@ -45,7 +46,6 @@ public class Rezultat extends BaseActivity implements OnClickListener {
 		users=Users.getActiveUsers();
 		modules=Modules.getActiveModules();
 		difficulties=Difficulties.getActiveDifficulties();
-		listaRezultata=Highscore.getBestFiveResults(difficulties);
 		
 		tvRazina=(TextView) findViewById(R.id.tvRazina);
 		tvModul=(TextView) findViewById(R.id.tvModul);
@@ -64,7 +64,7 @@ public class Rezultat extends BaseActivity implements OnClickListener {
 	}
 
 	private void ispisiRezultate() {
-		listaRezultata=Highscore.getBestFiveResults(difficulties);
+		listaRezultata=Highscore.getBestFiveResults(difficulties, modules);
 		
 		listaNajboljihIgraca=new ArrayList<String>();
 		listaNajboljihRezultata=new ArrayList<String>();
@@ -80,10 +80,12 @@ public class Rezultat extends BaseActivity implements OnClickListener {
 		lvNajboljiIgraci.setAdapter(aaNajboljiIgraci);
 		lvNajboljiRezultati.setAdapter(aaNajboljiRezultati);
 		
+		Toast.makeText(getBaseContext(), "Vaš rezultat: "+rezultat, Toast.LENGTH_SHORT).show();
+		
 	}
 
 	private void provjeriNajboljeRezultate() {
-		
+		listaRezultata=Highscore.getBestFiveResults(difficulties, modules);
 		for (int i = 0; i < listaRezultata.size(); i++) {
 			if (listaRezultata.get(i).getHighscore()<rezultat) {
 				flag=true;
