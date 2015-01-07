@@ -15,7 +15,7 @@ public class Generator_pitanja {
 	public Generator_pitanja() {
 	}
 
-	// metoda koja vraæa odreðen broj pitanja te razinu pitanja
+	// metoda koja vraæa odreðen broj pitanja(brojPitanja) te razinu pitanja(razina)
 	public static ArrayList<Pitanje> generiraj(int brojPitanja, int razina) {
 		ArrayList<Pitanje> listaPitanja = new ArrayList<Pitanje>();
 		switch (razina) {
@@ -142,9 +142,13 @@ public class Generator_pitanja {
 			}
 			simboli[0] = '-';
 			brojevi[2] = a - b;
+			
 		} else {
 			simboli[0] = '+';
+			a = rn.nextInt(15) + 1;
+			b = rn.nextInt(15) + 1;
 			brojevi[2] = a + b;
+			
 		}
 		brojevi[0] = a;
 		brojevi[1] = b;
@@ -173,7 +177,10 @@ public class Generator_pitanja {
 			brojevi[2] = a - b;
 		} else {
 			simboli[0] = '+';
+			a = rn.nextInt(25) + 1;
+			b = rn.nextInt(25) + 1;
 			brojevi[2] = a + b;
+			
 		}
 		brojevi[0] = a;
 		brojevi[1] = b;
@@ -205,6 +212,8 @@ public class Generator_pitanja {
 		}
 		if (s == 0) {
 			simboli[0] = '+';
+			a = rn.nextInt(25) + 1;
+			b = rn.nextInt(25) + 1;
 			brojevi[2] = a + b;
 			brojevi[0] = a;
 			brojevi[1] = b;
@@ -253,6 +262,8 @@ public class Generator_pitanja {
 			brojevi[1] = b;
 		}
 		if (s == 0) {
+			a = rn.nextInt(50) + 1;
+			b = rn.nextInt(50) + 1;
 			simboli[0] = '+';
 			brojevi[2] = a + b;
 			brojevi[0] = a;
