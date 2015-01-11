@@ -1,6 +1,5 @@
 package hr.foi.air.fragments;
 
-import hr.foi.air.generator.Pitanje;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;

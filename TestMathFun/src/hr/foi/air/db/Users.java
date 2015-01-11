@@ -7,7 +7,11 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
 import com.activeandroid.query.Update;
-
+/**
+ * Klasa za kreiranje i upravljanje tablicom "Users"
+ * @author FunFactory
+ *
+ */
 @Table(name = "Users")
 public class Users extends Model{
 	@Column(name = "Name")
@@ -26,7 +30,11 @@ public class Users extends Model{
 	public Users(){
 		super();
 	}
-	//konstruktor
+	/**
+	 * Konstruktor
+	 * @param name - ime igraca
+	 * @param last_played - igrac koji je zadnji igrao
+	 */
 	public Users(String name, long last_played){
 		super();
 		this.name=name;

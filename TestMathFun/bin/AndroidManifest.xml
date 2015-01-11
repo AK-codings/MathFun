@@ -25,10 +25,10 @@
         </activity>
         
         <activity android:name="hr.foi.air.main.Nickname"></activity>
-        <activity android:name="hr.foi.air.main.OdabirRazine"></activity>
-        <activity android:name="hr.foi.air.main.Zadatak"></activity>
-        <activity android:name="hr.foi.air.main.Rezultat"/>  
-        <activity android:name="hr.foi.air.main.Pravila"/>
+        <activity android:name="hr.foi.air.main.LevelSelect"></activity>
+        <activity android:name="hr.foi.air.main.Question"></activity>
+        <activity android:name="hr.foi.air.main.Result"/>  
+        <activity android:name="hr.foi.air.main.Rules"/>
         <!-- Baza za aplikaciju -->
         <meta-data android:name="AA_DB_NAME" android:value="baza.db" />
         <meta-data android:name="AA_DB_VERSION" android:value="2" />

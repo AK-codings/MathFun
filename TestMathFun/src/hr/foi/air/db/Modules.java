@@ -9,7 +9,11 @@ import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
 import com.activeandroid.query.Update;
-
+/**
+ * Klasa za kreiranje i upravljanje tablicom "Modules"
+ * @author FunFactory
+ *
+ */
 @Table(name = "Modules")
 public class Modules extends Model{
 	@Column(name = "Name")
@@ -22,7 +26,11 @@ public class Modules extends Model{
 	public Modules(){
 		super();
 	}
-	//konstruktor
+	/**
+	 * Konstruktor
+	 * @param name - ime modula
+	 * @param opis - opis modula
+	 */
 	public Modules(String name, String opis){
 		super();
 		this.name=name;
@@ -53,7 +61,10 @@ public class Modules extends Model{
 	public static List<Modules> getAllModules(){
 		return new Select().from(Modules.class).execute();
 	}
-	
+	/**
+	 * Dodavanje liste modula u bazu
+	 * @return listaModula
+	 */
 	public static List<Modules> createModulesList(){
 		List<Modules> listaModula=new ArrayList<Modules>();
 		listaModula.add(new Modules("Modul_1", "Toèno/Netoèno zadatci"));

@@ -23,13 +23,13 @@ import com.gc.materialdesign.views.ButtonRectangle;
 public class Nickname extends BaseActivity implements OnClickListener, OnItemClickListener {
 	private EditText et;
 	private ButtonRectangle bt;
-	private ListView lvIgraci;
+	private ListView lvUsers;
 	private AlertDialog.Builder dialog;
-	private List<Users> listaIgraca;
-	private ArrayList<String> alImenaIgraca;
-	private ArrayAdapter<String> aaImenaIgraca;
+	private List<Users> userList;
+	private ArrayList<String> alUserName;
+	private ArrayAdapter<String> aaUserName;
 	private Intent intent;
-	private Users igrac;
+	private Users user;
 	private boolean flag;
 	
 	@Override
@@ -42,8 +42,8 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 
 		bt = (ButtonRectangle) findViewById(R.id.btKreni);
 		et = (EditText) findViewById(R.id.etUnesiIgraca);
-		lvIgraci=(ListView) findViewById(R.id.lvListIgraca);
-		lvIgraci.setOnItemClickListener(this);
+		lvUsers=(ListView) findViewById(R.id.lvListIgraca);
+		lvUsers.setOnItemClickListener(this);
 		bt.setOnClickListener(this);
 		populateList();
 		
@@ -51,13 +51,13 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 
 	private void populateList() {
 		
-		listaIgraca=Users.getLastPlayers();
-		alImenaIgraca=new ArrayList<String>();
-		for (int i = 0; i < listaIgraca.size(); i++) {
-			alImenaIgraca.add(listaIgraca.get(i).getName());
+		userList=Users.getLastPlayers();
+		alUserName=new ArrayList<String>();
+		for (int i = 0; i < userList.size(); i++) {
+			alUserName.add(userList.get(i).getName());
 		}
-		aaImenaIgraca=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alImenaIgraca);
-		lvIgraci.setAdapter(aaImenaIgraca);
+		aaUserName=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alUserName);
+		lvUsers.setAdapter(aaUserName);
 		
 	}
 
@@ -86,7 +86,7 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 			public void onClick(DialogInterface dialog, int which) {
 				flag=createPlayer();
 				if(flag==true){
-					intent= new Intent(getBaseContext(), OdabirRazine.class);
+					intent= new Intent(getBaseContext(), LevelSelect.class);
 					intent.putExtra("ime", strToUpper(et.getText().toString()));
 					startActivity(intent);					
 				}else{
@@ -121,12 +121,12 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Users.setAllToInactive();
-		igrac=listaIgraca.get(position);
-		igrac.setActive(1);
-		igrac.setLastPlayed(new Date().getTime());
-		igrac.save();
-		intent= new Intent(getBaseContext(), OdabirRazine.class);
-		intent.putExtra("ime", igrac.getName());
+		user=userList.get(position);
+		user.setActive(1);
+		user.setLastPlayed(new Date().getTime());
+		user.save();
+		intent= new Intent(getBaseContext(), LevelSelect.class);
+		intent.putExtra("ime", user.getName());
 		startActivity(intent);		
 		
 	}

@@ -2,7 +2,7 @@ package hr.foi.air.main;
 
 import air.testmathfun.R;
 
-public class Pravila extends BaseActivity {
+public class Rules extends BaseActivity {
 
 	@Override
 	public int getLayout() {

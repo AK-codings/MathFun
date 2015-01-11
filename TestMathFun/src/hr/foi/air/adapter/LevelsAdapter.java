@@ -11,26 +11,34 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-public class RazineAdapter extends BaseAdapter {
+/**
+ * Adapter klasa koja nam sluzi za povezivanje podataka i "view" elementa
+ * @author FunFactory
+ *
+ */
+public class LevelsAdapter extends BaseAdapter {
 	private Context context;
-	private List<Difficulties> razine;
-	
-	public RazineAdapter(Context context, List<Difficulties> razine) {
+	private List<Difficulties> levels;
+	/**
+	 * Konstruktor
+	 * @param context - objekt konteksta
+	 * @param levels - lista razina
+	 */
+	public LevelsAdapter(Context context, List<Difficulties> levels) {
 		this.context=context;
-		this.razine=razine;
+		this.levels=levels;
 	}
 	
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return razine.size();
+		return levels.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		return razine.get(position);
+		return levels.get(position);
 	}
 
 	@Override
@@ -38,7 +46,9 @@ public class RazineAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return position;
 	}
-
+	/**
+	 * Metoda 
+	 */
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
 		LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -48,9 +58,9 @@ public class RazineAdapter extends BaseAdapter {
 		TextView tvRazina=(TextView) view.findViewById(air.testmathfun.R.id.tvRazina);
 		ImageView ivSlika=(ImageView) view.findViewById(air.testmathfun.R.id.ivSlikaRazine);
 		
-		tvRazina.setText(razine.get(position).getName());
-		tvOpisRazine.setText(razine.get(position).getOpis());
-		ivSlika.setImageResource(razine.get(position).getSlika());
+		tvRazina.setText(levels.get(position).getName());
+		tvOpisRazine.setText(levels.get(position).getOpis());
+		ivSlika.setImageResource(levels.get(position).getSlika());
 		
 		return view;
 	}

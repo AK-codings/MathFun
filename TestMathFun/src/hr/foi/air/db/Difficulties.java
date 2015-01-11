@@ -2,17 +2,18 @@ package hr.foi.air.db;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import air.testmathfun.R;
-import android.content.Loader.ForceLoadContentObserver;
-
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
 import com.activeandroid.query.Update;
-
+/**
+ * Klasa za kreiranje i upravljanje tablicom "Difficulties"
+ * @author FunFactory
+ *
+ */
 @Table(name = "Difficulties")
 public class Difficulties extends Model{
 	@Column(name = "Name")
@@ -27,7 +28,12 @@ public class Difficulties extends Model{
 	public Difficulties(){
 		super();
 	}
-	//konstruktor
+	/**
+	 * Konstruktor
+	 * @param name - ime tezine
+	 * @param opis - opis tezine
+	 * @param slika - slika tezine
+	 */
 	public Difficulties(String name, String opis, int slika){
 		super();
 		this.name=name;
@@ -64,7 +70,10 @@ public class Difficulties extends Model{
 	public static List<Difficulties> getAllDifficulties(){
 		return new Select().from(Difficulties.class).execute();
 	}
-	
+	/**
+	 * Dodavanje razina u bazu
+	 * @return razine
+	 */
 	public static List<Difficulties> createDifficultiesList(){
 		List<Difficulties> razine=new ArrayList<Difficulties>();
 		razine.add(new Difficulties("Razina 1", "Brojevi do 10 sa matematièkom operacijom zbrajanje", R.drawable.jedan));

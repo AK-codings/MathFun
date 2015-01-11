@@ -1,37 +1,32 @@
 package hr.foi.air.main;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.gc.materialdesign.views.ButtonRectangle;
 
-import hr.foi.air.adapter.RazineAdapter;
+import hr.foi.air.adapter.LevelsAdapter;
 import hr.foi.air.db.Difficulties;
 import hr.foi.air.db.Modules;
-import hr.foi.air.generator.Generator_pitanja;
-import hr.foi.air.generator.Pitanje;
 import air.testmathfun.R;
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.Bundle;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
+
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class OdabirRazine extends BaseActivity implements OnItemClickListener, OnClickListener{
-	private List<Difficulties> razine;
+public class LevelSelect extends BaseActivity implements OnItemClickListener, OnClickListener{
+	//private List<Difficulties> razine;
 	private Difficulties difficulties;
-	private RazineAdapter adapter;
-	private ListView lvRazine;
+	private LevelsAdapter adapter;
+	private ListView lvLevels;
 	private Dialog dialog;
 	private ButtonRectangle btModul1, btModul2, btModul3;
-	private TextView tvImeRazine;
-	private long razina;
+	private TextView tvLevelName;
+	private long level;
 	private Intent intent;
 	
 	@Override
@@ -44,19 +39,19 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 
 		Toast.makeText(this, "Igraè: "+getIntent().getExtras().getString("ime"), Toast.LENGTH_SHORT).show();
 		
-		adapter=new RazineAdapter(getBaseContext(), Difficulties.getAllDifficulties());
-		lvRazine=(ListView) findViewById(R.id.lvRazine);
-		lvRazine.setAdapter(adapter);
+		adapter=new LevelsAdapter(getBaseContext(), Difficulties.getAllDifficulties());
+		lvLevels=(ListView) findViewById(R.id.lvRazine);
+		lvLevels.setAdapter(adapter);
 		
-		lvRazine.setOnItemClickListener(this);
+		lvLevels.setOnItemClickListener(this);
 		
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Difficulties.setAllToInactive();
-		difficulties=(Difficulties) lvRazine.getItemAtPosition(position);
-		razina=difficulties.getId();
+		difficulties=(Difficulties) lvLevels.getItemAtPosition(position);
+		level=difficulties.getId();
 		difficulties.setActive(1);
 		difficulties.save();
 		createDialog(difficulties.getName());
@@ -71,9 +66,9 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 		btModul1=(ButtonRectangle) dialog.findViewById(R.id.btModul1);
 		btModul2=(ButtonRectangle) dialog.findViewById(R.id.btModul2);
 		btModul3=(ButtonRectangle) dialog.findViewById(R.id.btModul3);
-		tvImeRazine=(TextView) dialog.findViewById(R.id.tvImeRazine);
+		tvLevelName=(TextView) dialog.findViewById(R.id.tvImeRazine);
 		
-		tvImeRazine.setText("-"+difficultiesName+"-");
+		tvLevelName.setText("-"+difficultiesName+"-");
 		
 		btModul1.setOnClickListener(this);
 		btModul2.setOnClickListener(this);
@@ -85,8 +80,8 @@ public class OdabirRazine extends BaseActivity implements OnItemClickListener, O
 	@Override
 	public void onClick(View v) {
 		Modules.setAllToInactive();
-		intent=new Intent(getBaseContext(), Zadatak.class);
-		intent.putExtra("razina", razina);
+		intent=new Intent(getBaseContext(), Question.class);
+		intent.putExtra("razina", level);
 		
 		switch (v.getId()) {
 		case R.id.btModul1:

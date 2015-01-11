@@ -1,16 +1,16 @@
 package hr.foi.air.fragments;
 
-import hr.foi.air.generator.Pitanje;
+import hr.foi.air.generator.Questions;
 import air.testmathfun.R;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
-public class Modul_3 extends BaseFragment {
-	private Pitanje pitanje;
+//Klasa još nije gotova!
+public class Modul_drag_and_drop extends BaseFragment {
+	@SuppressWarnings("unused")
+	private Questions question;
 	
-	public Modul_3(Pitanje pitanje) {
-		this.pitanje=pitanje;
+	public Modul_drag_and_drop(Questions question) {
+		this.question=question;
 	}
 	@Override
 	protected int getLayoutId() {

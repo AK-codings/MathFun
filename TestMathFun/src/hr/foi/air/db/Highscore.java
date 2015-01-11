@@ -7,7 +7,11 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
 import com.activeandroid.query.Update;
-
+/**
+ * Klasa za kreiranje i upravljanje tablicom "Highscore"
+ * @author FunFactory
+ *
+ */
 @Table(name = "Highscore")
 public class Highscore extends Model{
 	@Column(name = "highscore")
@@ -22,7 +26,13 @@ public class Highscore extends Model{
 	public Highscore(){
 		super();
 	}	
-	//konstruktor
+	/**
+	 * Konstruktor
+	 * @param highscore - bodovno stanje
+	 * @param user_id - oznaka korisnika
+	 * @param module_id - oznaka modula
+	 * @param difficulty_id - oznaka tezine
+	 */
 	public Highscore(int highscore,Users user_id, Modules module_id, Difficulties difficulty_id){
 		super();
 		this.highscore=highscore;
