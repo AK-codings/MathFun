@@ -15,7 +15,7 @@
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
-        android:text="UNESITE IME NOVOG IGRAČA"
+        android:text="@string/unesite_ime_n_igraca"
         android:textColor="#1E88E5"
         android:textSize="20sp" />
         
@@ -30,7 +30,7 @@
         android:padding="10dp"
         android:textColor="#1E88E5"
         android:textSize="17sp"
-        android:hint="Unesite ime"
+        android:hint="@string/unesite_ime"
         android:textColorHint="#BDBCBC"
         android:textCursorDrawable="@null"
         android:typeface="sans" />
@@ -43,7 +43,7 @@
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
-        android:text="ILI IZABERI POSTOJEĆEG SA LISTE"
+        android:text="@string/postojeci_igrac"
         android:textColor="#1E88E5"
         android:textSize="20sp" />
     
@@ -57,7 +57,7 @@
 	        android:id="@+id/btKreni"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:text="Kreni"
+	        android:text="@string/kreni"
 	        materialdesign:rippleSpeed="100"/>
 
 </LinearLayout>

@@ -18,21 +18,21 @@
         android:layout_width="match_parent"
         materialdesign:rippleSpeed="100"
         android:layout_height="wrap_content"
-        android:text="Točno / Netočno Zadatci" />
+        android:text="@string/t_n_zadatci" />
       
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btModul2"
         android:layout_width="match_parent"
         materialdesign:rippleSpeed="100"
         android:layout_height="wrap_content"
-        android:text="Upisati točno rješenje" />
+        android:text="@string/upisati_tocno_rj" />
     
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btModul3"
         materialdesign:rippleSpeed="100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Drag and Drop" />
+        android:text="@string/drag_drop" />
 
 
 </LinearLayout>

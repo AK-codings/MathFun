@@ -37,7 +37,7 @@
         android:textColor="#000000"
         android:textSize="30sp"
         android:shadowRadius="3"
-        android:text="Najbolji rezultati"
+        android:text="@string/naj_rezultati"
         android:layout_gravity="center_horizontal"/>
         
 	<LinearLayout android:layout_width="match_parent"
@@ -62,7 +62,7 @@
 	        android:id="@+id/btNatrag"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:text="Natrag"
+	        android:text="@string/natrag"
 	        materialdesign:rippleSpeed="100"/>
     
 </LinearLayout>

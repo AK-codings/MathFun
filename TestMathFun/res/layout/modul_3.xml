@@ -13,7 +13,7 @@
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
-        android:text="Drag and Drop zadatci"
+        android:text="@string/drag_drop_zadatci"
         android:textColor="#1E88E5"
         android:textSize="15sp" />
     

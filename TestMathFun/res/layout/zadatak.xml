@@ -33,7 +33,7 @@
 	       android:layout_width="match_parent"
 	       android:layout_weight="1"
 	       android:layout_height="wrap_content"
-	       android:text="Točno"
+	       android:text="@string/tocno"
 	       materialdesign:rippleSpeed="100" />
 	
 	   <com.gc.materialdesign.views.ButtonRectangle
@@ -41,7 +41,7 @@
 	       android:id="@+id/btNetocno"
 	       android:layout_width="match_parent"
 	       android:layout_height="wrap_content"
-	       android:text="Netočno"
+	       android:text="@string/netocno"
 	       materialdesign:rippleSpeed="100" />       
 	       
     </LinearLayout>
@@ -50,7 +50,7 @@
         android:id="@+id/btIducePitanje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iduće pitanje"
+        android:text="@string/iduce_pitanje"
         materialdesign:rippleSpeed="100" />
 
     <TextView

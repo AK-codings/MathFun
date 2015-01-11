@@ -46,8 +46,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int checked=0x7f010008;
-        /**  if true, delays calls to OnClickListeners until ripple effect ends 
-         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -64,7 +63,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int iconDrawable=0x7f01000b;
-        /**  in button whitch contains drawable indicate icon resource 
+        /**  in float button indicate icon resource 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -112,8 +111,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ringWidth=0x7f010007;
-        /**  set the border of the ripple frame 
-         <p>Must be a floating point value, such as "<code>1.2</code>".
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -121,13 +119,13 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int rippleBorderRadius=0x7f01000e;
-        /**  Color of ripple animation 
+        /**  in float button indicate if must start with animation 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static final int rippleColor=0x7f010000;
+        public static final int rippleColor=0x7f010001;
         /**  Speed of ripple animation 
          <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
@@ -136,7 +134,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int rippleSpeed=0x7f010001;
+        public static final int rippleSpeed=0x7f010000;
         /**  indicate if the slider must show number indicator 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -178,8 +176,8 @@ containing a value of this type.
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f070000;
-        public static final int activity_vertical_margin=0x7f070001;
+        public static final int activity_horizontal_margin=0x7f080000;
+        public static final int activity_vertical_margin=0x7f080001;
     }
     public static final class drawable {
         public static final int background_button=0x7f020000;
@@ -287,7 +285,8 @@ containing a value of this type.
         public static final int pravila=0x7f03000b;
         public static final int rezultat=0x7f03000c;
         public static final int snackbar=0x7f03000d;
-        public static final int zadatak=0x7f03000e;
+        public static final int text=0x7f03000e;
+        public static final int zadatak=0x7f03000f;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
@@ -297,11 +296,42 @@ containing a value of this type.
         public static final int math=0x7f050001;
     }
     public static final class string {
-        public static final int action_settings=0x7f080002;
-        public static final int app_name=0x7f080000;
-        public static final int hello_world=0x7f080001;
-        public static final int pravila=0x7f080003;
-        public static final int result_part_1=0x7f080004;
+        public static final int action_settings=0x7f070004;
+        public static final int app_name=0x7f070000;
+        public static final int da=0x7f07001e;
+        public static final int da_li_zelite_stvoriti_novog_igraca=0x7f07001d;
+        public static final int drag_drop=0x7f07000d;
+        public static final int drag_drop_zadatci=0x7f07000e;
+        public static final int hello_fun=0x7f070002;
+        public static final int hello_world=0x7f070001;
+        public static final int iduce_pitanje=0x7f070018;
+        public static final int igrac=0x7f070019;
+        public static final int igraj=0x7f070003;
+        public static final int ime_ne_moze_biti_prazno=0x7f07001b;
+        public static final int korisnik_postoji=0x7f070020;
+        public static final int kreni=0x7f070012;
+        public static final int morate_rijesiti=0x7f070021;
+        public static final int naj_rezultati=0x7f070014;
+        public static final int natrag=0x7f070015;
+        public static final int ne=0x7f07001f;
+        public static final int netocno=0x7f070017;
+        public static final int novi_igrac=0x7f07001c;
+        public static final int odaberi_vrstu_zadatka=0x7f07001a;
+        public static final int odgovor=0x7f070009;
+        public static final int opis_razine=0x7f070013;
+        public static final int postojeci_igrac=0x7f070011;
+        public static final int pravila=0x7f070008;
+        public static final int pravila1=0x7f070005;
+        public static final int pravila_igre=0x7f070007;
+        public static final int prikazi_rezultate=0x7f070006;
+        public static final int result_part_1=0x7f07000a;
+        public static final int t_n_zadatci=0x7f07000b;
+        public static final int tocno=0x7f070016;
+        public static final int unesite_ime=0x7f070010;
+        public static final int unesite_ime_n_igraca=0x7f07000f;
+        public static final int upisati_tocno_rj=0x7f07000c;
+        public static final int vas_rezultat=0x7f070023;
+        public static final int vrijeme=0x7f070022;
     }
     public static final class style {
         /** 
@@ -341,15 +371,15 @@ containing a value of this type.
            <tr><td><code>{@link #CustomAttributes_animate air.testmathfun:animate}</code></td><td> in float button indicate if must start with animation </td></tr>
            <tr><td><code>{@link #CustomAttributes_checkBoxSize air.testmathfun:checkBoxSize}</code></td><td></td></tr>
            <tr><td><code>{@link #CustomAttributes_checked air.testmathfun:checked}</code></td><td> in switche's view indicate state of view </td></tr>
-           <tr><td><code>{@link #CustomAttributes_clickAfterRipple air.testmathfun:clickAfterRipple}</code></td><td> if true, delays calls to OnClickListeners until ripple effect ends </td></tr>
+           <tr><td><code>{@link #CustomAttributes_clickAfterRipple air.testmathfun:clickAfterRipple}</code></td><td></td></tr>
            <tr><td><code>{@link #CustomAttributes_iconDrawable air.testmathfun:iconDrawable}</code></td><td> in float button indicate icon resource </td></tr>
-           <tr><td><code>{@link #CustomAttributes_iconSize air.testmathfun:iconSize}</code></td><td> in button whitch contains drawable indicate icon resource </td></tr>
+           <tr><td><code>{@link #CustomAttributes_iconSize air.testmathfun:iconSize}</code></td><td> in float button indicate icon resource </td></tr>
            <tr><td><code>{@link #CustomAttributes_max air.testmathfun:max}</code></td><td> in progress view indicate max value of progress </td></tr>
            <tr><td><code>{@link #CustomAttributes_min air.testmathfun:min}</code></td><td> in progress view indicate min value of progress </td></tr>
            <tr><td><code>{@link #CustomAttributes_progress air.testmathfun:progress}</code></td><td> in progress view indicate value of progress </td></tr>
            <tr><td><code>{@link #CustomAttributes_ringWidth air.testmathfun:ringWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #CustomAttributes_rippleBorderRadius air.testmathfun:rippleBorderRadius}</code></td><td> set the border of the ripple frame </td></tr>
-           <tr><td><code>{@link #CustomAttributes_rippleColor air.testmathfun:rippleColor}</code></td><td> Color of ripple animation </td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleBorderRadius air.testmathfun:rippleBorderRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleColor air.testmathfun:rippleColor}</code></td><td> in float button indicate if must start with animation </td></tr>
            <tr><td><code>{@link #CustomAttributes_rippleSpeed air.testmathfun:rippleSpeed}</code></td><td> Speed of ripple animation </td></tr>
            <tr><td><code>{@link #CustomAttributes_showNumberIndicator air.testmathfun:showNumberIndicator}</code></td><td> indicate if the slider must show number indicator </td></tr>
            <tr><td><code>{@link #CustomAttributes_thumbSize air.testmathfun:thumbSize}</code></td><td></td></tr>
@@ -427,9 +457,8 @@ containing a value of this type.
         */
         public static final int CustomAttributes_checked = 8;
         /**
-          <p>
-          @attr description
-           if true, delays calls to OnClickListeners until ripple effect ends 
+          <p>This symbol is the offset where the {@link air.testmathfun.R.attr#clickAfterRipple}
+          attribute's value can be found in the {@link #CustomAttributes} array.
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -438,7 +467,6 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name air.testmathfun:clickAfterRipple
         */
         public static final int CustomAttributes_clickAfterRipple = 15;
@@ -461,7 +489,7 @@ containing a value of this type.
         /**
           <p>
           @attr description
-           in button whitch contains drawable indicate icon resource 
+           in float button indicate icon resource 
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -541,9 +569,8 @@ containing a value of this type.
         */
         public static final int CustomAttributes_ringWidth = 7;
         /**
-          <p>
-          @attr description
-           set the border of the ripple frame 
+          <p>This symbol is the offset where the {@link air.testmathfun.R.attr#rippleBorderRadius}
+          attribute's value can be found in the {@link #CustomAttributes} array.
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -552,14 +579,13 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name air.testmathfun:rippleBorderRadius
         */
         public static final int CustomAttributes_rippleBorderRadius = 14;
         /**
           <p>
           @attr description
-           Color of ripple animation 
+           in float button indicate if must start with animation 
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -569,7 +595,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name air.testmathfun:rippleColor
         */
-        public static final int CustomAttributes_rippleColor = 0;
+        public static final int CustomAttributes_rippleColor = 1;
         /**
           <p>
           @attr description
@@ -585,7 +611,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name air.testmathfun:rippleSpeed
         */
-        public static final int CustomAttributes_rippleSpeed = 1;
+        public static final int CustomAttributes_rippleSpeed = 0;
         /**
           <p>
           @attr description
