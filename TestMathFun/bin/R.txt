@@ -22,6 +22,8 @@ int attr showNumberIndicator 0x7f010002
 int attr thumbSize 0x7f01000a
 int attr value 0x7f010005
 int color green 0x7f060000
+int color myBlue 0x7f060002
+int color myGray 0x7f060003
 int color thumbColor 0x7f060001
 int dimen activity_horizontal_margin 0x7f080000
 int dimen activity_vertical_margin 0x7f080001
@@ -84,7 +86,7 @@ int id etOdgovor 0x7f0b0015
 int id etUnesiIgraca 0x7f0b001c
 int id green 0x7f0b000a
 int id imageView1 0x7f0b0000
-int id imageView11 0x7f0b0024
+int id ivMathLogo 0x7f0b0024
 int id ivSlikaRazine 0x7f0b0021
 int id lvListIgraca 0x7f0b001d
 int id lvNajboljiIgraci 0x7f0b0028
@@ -131,6 +133,7 @@ int layout zadatak 0x7f03000f
 int menu main 0x7f0a0000
 int raw cgg 0x7f050000
 int raw math 0x7f050001
+int string Razina 0x7f070024
 int string action_settings 0x7f070004
 int string app_name 0x7f070000
 int string da 0x7f07001e

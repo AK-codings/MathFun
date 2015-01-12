@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:shadowColor="#1E88E5"
+        android:shadowColor="@color/myBlue"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
         android:text="@string/unesite_ime_n_igraca"
-        android:textColor="#1E88E5"
+        android:textColor="@color/myBlue"
         android:textSize="20sp" />
         
     <EditText
@@ -28,10 +28,10 @@
         android:background="@drawable/border_blue"
         android:ems="10"
         android:padding="10dp"
-        android:textColor="#1E88E5"
+        android:textColor="@color/myBlue"
         android:textSize="17sp"
         android:hint="@string/unesite_ime"
-        android:textColorHint="#BDBCBC"
+        android:textColorHint="@color/myGray"
         android:textCursorDrawable="@null"
         android:typeface="sans" />
     
@@ -39,12 +39,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:shadowColor="#1E88E5"
+        android:shadowColor="@color/myBlue"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
         android:text="@string/postojeci_igrac"
-        android:textColor="#1E88E5"
+        android:textColor="@color/myBlue"
         android:textSize="20sp" />
     
      <ListView    

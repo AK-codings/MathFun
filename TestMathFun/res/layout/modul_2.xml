@@ -9,14 +9,13 @@
         android:id="@+id/tvBrojPitanja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:shadowColor="#1E88E5"
+        android:shadowColor="@color/myBlue"
         android:shadowDx="2"
         android:shadowDy="2"
-        android:textColor="#1E88E5"
+        android:textColor="@color/myBlue"
         android:textSize="15sp"
         android:shadowRadius="3"
-        android:layout_gravity="center_horizontal"                
-        android:text="Pitanje broj N" />
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/tvPitanje"
@@ -25,8 +24,7 @@
         android:layout_marginTop="50dp"
         android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_height="wrap_content"
-        android:text="Pitanje...Koliko je N + M" />
+        android:layout_height="wrap_content"/>
     
     <EditText android:layout_width="match_parent"
         android:layout_height="wrap_content"

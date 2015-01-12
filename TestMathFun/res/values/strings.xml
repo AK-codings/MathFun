@@ -35,5 +35,6 @@
 		<string name="korisnik_postoji">Taj korisnik već postoji!</string>
 		<string name="morate_rijesiti">Morate riješiti zadatak do kraja!</string>
 		<string name="vrijeme">Vrijeme </string>
-		<string name="vas_rezultat">Vaš rezultat</string>	
+		<string name="vas_rezultat">Vaš rezultat</string>
+		<string name="Razina">Razina</string>	
     </resources>

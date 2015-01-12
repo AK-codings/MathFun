@@ -34,11 +34,17 @@ public class Question extends BaseActivity implements OnClickListener {
 	private Intent intent;
 	private Timer timer;
 
+	/**
+	 * Metoda za povezivanje layouta
+	 */
 	@Override
 	public int getLayout() {
 		return R.layout.zadatak;
 	}
 
+	/**
+	 * Metoda koja se poziva nakon povezivanja layouta
+	 */
 	@Override
 	public void initView() {
 
@@ -69,23 +75,31 @@ public class Question extends BaseActivity implements OnClickListener {
 
 	}
 
+	/**
+	 * Metoda za kontrolu back tipke
+	 */
 	@Override
 	public void onBackPressed() {
 		Toast.makeText(getBaseContext(), "Morate rješiti zadatak do kraja!",
 				Toast.LENGTH_SHORT).show();
-		 super.onBackPressed();
+		// super.onBackPressed();
 	}
 
+	/**
+	 * Metoda koja kreira fragmente ovisno o odabranom modulu i razini
+	 */
 	private void createFragments() {
-		if (modul == 1) {
+		switch (modul) {
+		case 1:
 			for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 				fragmentList.add(new Modul_yes_no(questionList.get(i)));
 			}
 			fManager.beginTransaction()
 					.add(R.id.container, fragmentList.get(currentFragment))
 					.commit();
-			btNextQuestion.setVisibility(View.GONE);
-		} else if (modul == 2) {
+			btNextQuestion.setVisibility(View.GONE);			
+			break;
+		case 2:
 			for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 				fragmentList.add(new Modul_solve(questionList.get(i)));
 			}
@@ -93,8 +107,9 @@ public class Question extends BaseActivity implements OnClickListener {
 					.add(R.id.container, fragmentList.get(currentFragment))
 					.commit();
 			btCorrect.setVisibility(View.GONE);
-			btIncorrect.setVisibility(View.GONE);
-		} else {
+			btIncorrect.setVisibility(View.GONE);			
+			break;
+		case 3:
 			for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
 				fragmentList.add(new Modul_drag_and_drop(questionList.get(i)));
 			}
@@ -103,11 +118,17 @@ public class Question extends BaseActivity implements OnClickListener {
 					.commit();
 			btNextQuestion.setVisibility(View.GONE);
 			btCorrect.setVisibility(View.GONE);
-			btIncorrect.setVisibility(View.GONE);
+			btIncorrect.setVisibility(View.GONE);			
+			break;
+		default:
+			
+			break;
 		}
-
 	}
 
+	/**
+	 * Osluškuje klik na button
+	 */
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -131,6 +152,9 @@ public class Question extends BaseActivity implements OnClickListener {
 		
 	}
 
+	/**
+	 * Metoda koja provjerava broj odgovora, ukoliko je broj 10, raèuna toène bodove i šalje u rezultat activity
+	 */
 	private void provjeriBrojOdgovora() {
 		if (currentFragment != NUMBER_OF_QUESTIONS - 1) {
 			fManager.beginTransaction()
@@ -138,7 +162,6 @@ public class Question extends BaseActivity implements OnClickListener {
 							fragmentList.get(++currentFragment))
 					.commit();
 		} else {
-			// start result activity, this is temporary
 			intent = new Intent(getBaseContext(), Result.class);
 			intent.putExtra("brojTocnihOdgovora", numberOfCorrectAnswers * 1000
 					/ time);
@@ -146,6 +169,9 @@ public class Question extends BaseActivity implements OnClickListener {
 		}
 	}
 
+	/**
+	 * Metoda za postavljanje vremena odnosno timera
+	 */
 	private void postaviVrijeme() {
 		timer = new Timer();
 

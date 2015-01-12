@@ -32,11 +32,17 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 	private Users user;
 	private boolean flag;
 	
+	/**
+	 * Metoda koja povezuje layout
+	 */
 	@Override
 	public int getLayout() {
 		return R.layout.nickname;
 	}
 
+	/**
+	 * Metoda koja se izvršava nakon povezivanja layouta
+	 */
 	@Override
 	public void initView() {
 
@@ -49,6 +55,9 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		
 }
 
+	/**
+	 * Metoda koja ispisuje zadnje aktivne igraèe
+	 */
 	private void populateList() {
 		
 		userList=Users.getLastPlayers();
@@ -61,6 +70,9 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		
 	}
 
+	/**
+	 * Osluškuje klik na button
+	 */
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -76,6 +88,9 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		}
 	}
 
+	/**
+	 * Metoda koja stvara dialog na kojem se potvrðuju stvaranje novog igraèa
+	 */
 	private void makeDialog() {
 		dialog=new AlertDialog.Builder(this);
 		dialog.setTitle("Novi igraè");
@@ -105,6 +120,10 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		dialog.show();				
 	}
 	
+	/**
+	 * Metoda za stvaranje novog igraèa, odnosno ukoliko taj igraè veè postoji vraèa false
+	 * @return boolean
+	 */
 	private  boolean createPlayer() {
 		Users.setAllToInactive();
 		if(Users.getUser(strToUpper(et.getText().toString())) == null){
@@ -118,6 +137,9 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		}
 	}
 
+	/**
+	 * Osluškuje klik unutar listViewa
+	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Users.setAllToInactive();
@@ -131,6 +153,11 @@ public class Nickname extends BaseActivity implements OnClickListener, OnItemCli
 		
 	}
 	
+	/**
+	 * Metoda koja stvara igraèa u bazi s prvim slovom imena i prezimena veliko (npr Ivo Iviæ Ivanec)
+	 * @param source
+	 * @return String
+	 */
    private String strToUpper(String source){
 	    source=source.toLowerCase();
         boolean cap = true;

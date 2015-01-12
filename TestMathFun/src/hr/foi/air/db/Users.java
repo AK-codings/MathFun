@@ -53,21 +53,40 @@ public class Users extends Model{
 	
 	
 	
-	
+	/**
+	 * Metoda za dohvaæanje zadnjih aktivnih igraèa
+	 * @return List<Users>
+	 */
 	public static List<Users> getLastPlayers(){
 		//return new Select().from(Users.class).orderBy("last_played DESC").limit(4).execute();  -> za limit
 		return new Select().from(Users.class).orderBy("last_played DESC").execute();
 	}
+	/**
+	 * Metoda za ispis ukupnog broja igraèa
+	 * @return int
+	 */
 	public static int getNumberOfPlayers(){
 		return new Select().from(Users.class).count();
 	}
+	/**
+	 * Metoda koja postavlja sve igraèe u neaktivne
+	 */
 	public static void setAllToInactive(){
 		new Update(Users.class).set("active=?",0).execute();
 	}
+	/**
+	 * Metoda koja dohvaèa odreðenog igraèa
+	 * @param name
+	 * @return Users
+	 */
 	public static Users getUser(String name){
 		return new Select().from(Users.class).where("name=?",name).executeSingle();
 	}
 	
+	/**
+	 * Metoda koja dohvaèa trenutnog aktivnog igraèa
+	 * @return Users
+	 */
 	public static Users getActiveUsers(){
 		return new Select().from(Users.class).where("active=?",1).executeSingle();
 	}

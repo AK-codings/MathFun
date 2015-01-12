@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:text=""
         android:textSize="24sp"
-        android:textColor="#1E88E5"/>
+        android:textColor="@color/myBlue"/>
         
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/btModul1"

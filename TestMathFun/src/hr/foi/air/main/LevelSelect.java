@@ -28,12 +28,19 @@ public class LevelSelect extends BaseActivity implements OnItemClickListener, On
 	private TextView tvLevelName;
 	private long level;
 	private Intent intent;
+	public final static String KEY_MODULE="modul", KEY_RAZINA="razina";
 	
+	/**
+	 * Metoda koja povezuje layout
+	 */
 	@Override
 	public int getLayout() {
 		return R.layout.odabir_razine;
 	}
 	
+	/**
+	 * Metoda koja se izvršava nakon povezivanja layouta
+	 */
 	@Override
 	public void initView() {
 
@@ -47,6 +54,9 @@ public class LevelSelect extends BaseActivity implements OnItemClickListener, On
 		
 	}
 
+	/**
+	 * Osluškuje klik na listViewu za razinu igre
+	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Difficulties.setAllToInactive();
@@ -57,6 +67,10 @@ public class LevelSelect extends BaseActivity implements OnItemClickListener, On
 		createDialog(difficulties.getName());
 	}
 
+	/**
+	 * Metoda koja stvara dialog za odabir Modula ovisno o razini (drag and drop, yes/no, solve)
+	 * @param difficultiesName
+	 */
 	private void createDialog(String difficultiesName) {
 		dialog=new Dialog(this);
 		dialog.setContentView(R.layout.modules_dialog);
@@ -77,27 +91,30 @@ public class LevelSelect extends BaseActivity implements OnItemClickListener, On
 		
 	}
 
+	/**
+	 * Osluškuje klik na button u dialogu za odabir modula
+	 */
 	@Override
 	public void onClick(View v) {
 		Modules.setAllToInactive();
 		intent=new Intent(getBaseContext(), Question.class);
-		intent.putExtra("razina", level);
+		intent.putExtra(LevelSelect.KEY_RAZINA, level);
 		
 		switch (v.getId()) {
 		case R.id.btModul1:
 			Modules.setToActive("Modul_1");
-			intent.putExtra("modul", 1);
+			intent.putExtra(LevelSelect.KEY_MODULE, 1);
 			startActivity(intent);
 			break;
 		case R.id.btModul2:
 			Modules.setToActive("Modul_2");
-			intent.putExtra("modul", 2);
+			intent.putExtra(LevelSelect.KEY_MODULE, 2);
 			startActivity(intent);
 			break;
 		case R.id.btModul3:
 			Toast.makeText(getBaseContext(), "Trenutno nije u funkciji!", Toast.LENGTH_SHORT).show();
 //			Modules.setToActive("Modul_3");
-//			intent.putExtra("modul", 3);
+//			intent.putExtra(KEY_MODULE, 3);
 //			startActivity(intent);
 			break;
 		default:

@@ -33,11 +33,17 @@ public class Result extends BaseActivity implements OnClickListener {
 	private ArrayList<String> bestPlayersList, bestResultList;
 	private ArrayAdapter<String> aaBestResoult, aaBestPlayer;
 	
+	/**
+	 * Metoda za povezivanje layouta
+	 */
 	@Override
 	public int getLayout() {
 		return R.layout.rezultat;
 	}
 
+	/**
+	 * Metoda koja se izvršava nakon povezivanja layouta
+	 */
 	@Override
 	public void initView() {
 		result=getIntent().getExtras().getInt("brojTocnihOdgovora");
@@ -62,6 +68,9 @@ public class Result extends BaseActivity implements OnClickListener {
 		ispisiRezultate();
 	}
 
+	/**
+	 * Metoda koja ispisuje najboljih pet rezultata iz baze
+	 */
 	private void ispisiRezultate() {
 		resultList=Highscore.getBestFiveResults(difficulties, modules);
 		
@@ -83,6 +92,9 @@ public class Result extends BaseActivity implements OnClickListener {
 		
 	}
 
+	/**
+	 * Metoda koja provjerava dali je naš rezultat bolji od najboljih 5 rezultata na tom modulu i razini, te ako je unosi rezultat u bazu
+	 */
 	private void provjeriNajboljeRezultate() {
 		resultList=Highscore.getBestFiveResults(difficulties, modules);
 		for (int i = 0; i < resultList.size(); i++) {
@@ -94,11 +106,13 @@ public class Result extends BaseActivity implements OnClickListener {
 			highscore=new Highscore(result, users, modules, difficulties);
 			highscore.save();
 		}else if(flag){
-			System.out.println("DA");
 			Highscore.updateHightlist(modules, difficulties, users, result);
 		}
 	}
 
+	/**
+	 * Osluskuje klik na button
+	 */
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -111,6 +125,10 @@ public class Result extends BaseActivity implements OnClickListener {
 		}
 		
 	}
+	
+	/**
+	 * Metoda za kontrolu tipke back
+	 */
 	@Override
 	public void onBackPressed() {
 		startActivity(new Intent(getBaseContext(), MainActivity.class));

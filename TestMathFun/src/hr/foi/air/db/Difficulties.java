@@ -85,15 +85,23 @@ public class Difficulties extends Model{
 		razine.add(new Difficulties("Razina 7", "Brojevi do 100 sa matematièkim operacijama zbrajanja, oduzimanja, djeljenja i množenja",  R.drawable.sedam));
 		return razine;
 	}
-	
+	/**
+	 * Metoda za brisanje težina
+	 */
 	public static void deleteDifficulties(){
 		new Delete().from(Difficulties.class).execute();
 	}
 	
+	/**
+	 * Metoda za podešavanje aktivne težine
+	 */
 	public static void setAllToInactive(){
 		new Update(Difficulties.class).set("active=?",0).execute();
 	}
-	
+	/**
+	 * Metoda za dohvaèanje aktivne težine
+	 * @return Difficulties
+	 */
 	public static Difficulties getActiveDifficulties(){
 		return new Select().from(Difficulties.class).where("active=?",1).executeSingle();
 	}

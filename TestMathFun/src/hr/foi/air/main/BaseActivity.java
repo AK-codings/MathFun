@@ -9,6 +9,9 @@ public abstract class BaseActivity extends Activity {
 
 	public abstract int getLayout();
 
+	/**
+	 * Metoda za povezivanje layouta
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

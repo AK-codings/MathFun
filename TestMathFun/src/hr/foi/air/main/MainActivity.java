@@ -24,11 +24,17 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private List<Difficulties> listaRazina;
 	private List<Modules> listaModula;
 	
+	/**
+	 * Metoda koja povezuje layout 
+	 */
 	@Override
 	public int getLayout() {
 		return R.layout.activity_main;
 	}
 
+	/**
+	 * Metoda koja se izvršava nakon povezivanja koda s layoutom
+	 */
 	@Override
 	public void initView() {
 		btIgraj = (ButtonRectangle) findViewById(R.id.btIgraj);
@@ -39,7 +45,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		prepareDatabase();
 	}
 	
-	//Postavi database ako je prazan
+	/**
+	 * Metoda koja postavlja bazu ukoliko je ona prazna (da ima najmanje 4 igraèa, radi ljepše vizualizacije). Takoðer stvara težine i module u bazi.
+	 */
 	private void prepareDatabase() {
 		if (Users.getNumberOfPlayers() == 0) {
 			Users user1=new Users("Antonio Markoc", 19);
@@ -70,12 +78,18 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		
 	}
 
+	/**
+	 * Metoda za postavlanje menua
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
+	/**
+	 * Metoda za dogaðaj kada je kliknuto nešto iz menua
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
@@ -85,6 +99,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
+	/**
+	 * Metoda koja osluškuje klik na odreðeni button
+	 */
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -100,9 +117,15 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		
 	}
 
+	/**
+	 * Metoda koja kontrolira klik na back tipku. U ovom sluèaje izlazi iz aplikacije.
+	 */
 	@Override
 	public void onBackPressed() {
-		finish();
-		return;
+		//exit application
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
 	}
 }

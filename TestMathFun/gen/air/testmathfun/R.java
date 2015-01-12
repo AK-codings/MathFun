@@ -166,6 +166,8 @@ containing a value of this type.
     }
     public static final class color {
         public static final int green=0x7f060000;
+        public static final int myBlue=0x7f060002;
+        public static final int myGray=0x7f060003;
         public static final int thumbColor=0x7f060001;
     }
     public static final class dimen {
@@ -241,7 +243,7 @@ containing a value of this type.
         public static final int etUnesiIgraca=0x7f0b001c;
         public static final int green=0x7f0b000a;
         public static final int imageView1=0x7f0b0000;
-        public static final int imageView11=0x7f0b0024;
+        public static final int ivMathLogo=0x7f0b0024;
         public static final int ivSlikaRazine=0x7f0b0021;
         public static final int lvListIgraca=0x7f0b001d;
         public static final int lvNajboljiIgraci=0x7f0b0028;
@@ -296,6 +298,7 @@ containing a value of this type.
         public static final int math=0x7f050001;
     }
     public static final class string {
+        public static final int Razina=0x7f070024;
         public static final int action_settings=0x7f070004;
         public static final int app_name=0x7f070000;
         public static final int da=0x7f07001e;

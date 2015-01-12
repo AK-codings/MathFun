@@ -25,12 +25,17 @@ public class Modul_yes_no extends BaseFragment {
 		solution=pitanje.getNumbers()[2];
 	}
 	
-	
+	/**
+	 * Metoda za povezivanje layouta
+	 */
 	@Override
 	protected int getLayoutId() {
 		return R.layout.modul_1;
 	}
 
+	/**
+	 * Metoda koja se obavlja nakon povezivanja layouta
+	 */
 	@Override
 	protected void initView(View view, Bundle bundle) {
 		rnd=new Random();
@@ -47,6 +52,9 @@ public class Modul_yes_no extends BaseFragment {
 		
 	}
 	
+	/**
+	 * Metoda koja stvara razliku u rezultatu (50-50% šanse za toèan rezultat)
+	 */
 	private void createTask() {
 		if(rnd.nextInt(2)==1){
 			if(rnd.nextInt(2)==1){
@@ -58,6 +66,12 @@ public class Modul_yes_no extends BaseFragment {
 	}
 
 
+	/**
+	 * Metoda koja raèuna dali je unešen odgovor toèan odnosno jednak rezultatu
+	 * @param pitanje
+	 * @param odgovor
+	 * @return boolean
+	 */
 	public static boolean calculate(Questions pitanje, String odgovor){
 			
 			if (pitanje.getNumbers()[2]==solution && odgovor.equals("tocno")) {

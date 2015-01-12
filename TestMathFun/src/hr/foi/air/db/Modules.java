@@ -61,9 +61,10 @@ public class Modules extends Model{
 	public static List<Modules> getAllModules(){
 		return new Select().from(Modules.class).execute();
 	}
+	
 	/**
 	 * Dodavanje liste modula u bazu
-	 * @return listaModula
+	 * @return List<Modules>
 	 */
 	public static List<Modules> createModulesList(){
 		List<Modules> listaModula=new ArrayList<Modules>();
@@ -72,14 +73,26 @@ public class Modules extends Model{
 		listaModula.add(new Modules("Modul_3", "Drag and Drop"));
 		return listaModula;
 	}
+	
+	/**
+	 * Metoda za brisanje svih module iz baze
+	 */
 	public static void deleteModules() {
 		new Delete().from(Modules.class).execute();
 	}
 	
+	/**
+	 * Metoda koja postavlja modul u aktivan
+	 * @param name
+	 */
 	public static void setToActive(String name){
 		new Update(Modules.class).set("active=?",1).where("name=?",name).execute();
 	}
 	
+	/**
+	 * Metoda koja dohvaèa trenutno aktivni modul
+	 * @return Modules
+	 */
 	public static Modules getActiveModules(){
 		return new Select().from(Modules.class).where("active=?",1).executeSingle();
 	}

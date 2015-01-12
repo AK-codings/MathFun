@@ -18,19 +18,28 @@ public class Modul_solve extends BaseFragment  {
 	private View view;
 	private static int currentQuestion=1;
 		
-	public Modul_solve(){}
+	/**
+	 * Konstruktor
+	 * @param question
+	 */
 	public Modul_solve(Questions question) {
 		number1=question.getNumbers()[0];
 		number2=question.getNumbers()[1];
 		operator=question.getSimbols()[0];
 		solution=question.getNumbers()[2];
 	}
-
+	
+	/**
+	 * Metoda za povezivanje layouta
+	 */
 	@Override
 	protected int getLayoutId() {
 		return R.layout.modul_2;
 	}
 
+	/**
+	 * Metoda koja se obavlja nakon povezivanja layouta
+	 */	
 	@Override
 	protected void initView(View view, Bundle bundle) {
 		this.view=view;
@@ -46,7 +55,11 @@ public class Modul_solve extends BaseFragment  {
 				
 	}
 
-	
+	/**
+	 * Metoda koja raèuna dali je unešen odgovor toèan odnosno jednak rezultatu
+	 * @param pitanje
+	 * @return boolean
+	 */
 	public static boolean calculate(Questions pitanje)  {
 		if(etSolution.getText().toString().isEmpty()) etSolution.setText("0"); 
 		if (Integer.parseInt(etSolution.getText().toString()) == pitanje.getNumbers()[2]) {

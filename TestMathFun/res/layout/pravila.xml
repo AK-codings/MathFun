@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/ivMathLogo"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         android:id="@+id/textViewPravila"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView11"
+        android:layout_below="@+id/ivMathLogo"
         android:layout_centerHorizontal="true"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -32,7 +32,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" 
         android:padding="10dp"
-        android:fontFamily="serif"
         android:text="@string/pravila"
         />
 

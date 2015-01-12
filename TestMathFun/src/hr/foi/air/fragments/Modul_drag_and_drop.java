@@ -19,7 +19,7 @@ public class Modul_drag_and_drop extends BaseFragment {
 
 	@Override
 	protected void initView(View view, Bundle bundle) {
-		//todo
+		//TODO za razvoj
 	}
 
 }

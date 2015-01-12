@@ -67,12 +67,29 @@ public class Highscore extends Model{
 	public void setDifficulty_id(Difficulties difficulty_id) {
 		this.difficulty_id = difficulty_id;
 	}
+	/**
+	 * Metoda za ispit najboljih 5 rezultata 
+	 * @param difficulties
+	 * @param modul
+	 * @return List<Highscore>
+	 */
 	public static List<Highscore> getBestFiveResults(Difficulties difficulties, Modules modul){
 		return new Select().from(Highscore.class).orderBy("highscore DESC").where("difficulty_id=? AND module_id=?",difficulties.getId(), modul.getId()).limit(5).execute();
 	}
+	/**
+	 * Metoda za ažuriranje najboljih rezultata
+	 * @param modules
+	 * @param difficulties
+	 * @param users
+	 * @param highscore
+	 */
 	public static void updateHightlist(Modules modules, Difficulties difficulties, Users users, int highscore){
 		new Update(Highscore.class).set("user_id=?,module_id=?,difficulty_id=?, highscore=?", users.getId(), modules.getId(), difficulties.getId(), highscore).where("highscore=?", getLowestHighscore().getHighscore()).execute();
 	}
+	/**
+	 * Metoda za dohvaæanje najlošijeg rezultata
+	 * @return Highscore
+	 */
 	private static Highscore getLowestHighscore() {
 		return new Select().from(Highscore.class).orderBy("highscore ASC").limit(1).executeSingle();
 	}

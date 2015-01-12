@@ -46,8 +46,10 @@ public class LevelsAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return position;
 	}
+
 	/**
-	 * Metoda 
+	 * Metoda koja vraèa layout za adapter
+	 * @author FunFactory
 	 */
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
