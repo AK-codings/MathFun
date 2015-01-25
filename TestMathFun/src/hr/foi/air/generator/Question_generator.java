@@ -11,7 +11,9 @@ import java.util.Random;
 
 public class Question_generator {
 
-	private final static int size = 5;
+	//private final static int size = 5;
+	private final static int numbers_field_size = 3;
+	private final static int symbols_field_size = 2;
 	private static int a, b, t, s;
 	private static int numbers[];
 	private static char simbols[];
@@ -71,8 +73,8 @@ public class Question_generator {
 	 */
 	private static Questions levelOne() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
@@ -92,8 +94,8 @@ public class Question_generator {
 	 */
 	private static Questions levelTwo() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
@@ -118,8 +120,8 @@ public class Question_generator {
 	 */
 	private static Questions leverThree() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(10) + 1;
 		b = rn.nextInt(10) + 1;
@@ -151,8 +153,8 @@ public class Question_generator {
 	 */
 	private static Questions levelFour() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(30) + 1;
 		b = rn.nextInt(30) + 1;
@@ -187,8 +189,8 @@ public class Question_generator {
 	 */
 	private static Questions levelFive() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(50) + 1;
 		b = rn.nextInt(50) + 1;
@@ -222,8 +224,8 @@ public class Question_generator {
 	 */
 	private static Questions levelSix() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(50) + 1;
 		b = rn.nextInt(50) + 1;
@@ -276,8 +278,8 @@ public class Question_generator {
 	 */
 	private static Questions levelSeven() {
 		question=new Questions();
-		numbers=new int[size];
-		simbols= new char[size];
+		numbers=new int[numbers_field_size];
+		simbols= new char[symbols_field_size];
 		
 		a = rn.nextInt(100) + 1;
 		b = rn.nextInt(100) + 1;

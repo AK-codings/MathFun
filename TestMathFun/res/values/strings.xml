@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <resources>
-        <string name="app_name">MathFun</string>
-   		<string name="hello_world">Hello world!</string>
-   		<string name="hello_fun">HELLO FUN !</string>
-   		<string name="igraj">Igraj</string>
-    	<string name="action_settings">Settings</string>
-    	<string name="pravila1">Pravila</string>
-    	<string name="prikazi_rezultate">Prikaži rezultate</string>
-    	<string name="pravila_igre">Pravila igre</string>
-    	<string name="pravila">Aplikaciju MathFun sačinjava nekoliko nivoa težine matematičkih zadataka prikazanih kroz tri modula. Moduli se razlikuju u načinu pristupa rješavanju matematičkih zadataka. \n \n -	<b>Modul I </b> – zahtjeva od korisnika razumijevanje zadatka i odluku Točno/Netočno \n \n - <b>Modul II</b>- zadaci se rješavaju na način da korisnik upisuje traženo rješenje \n \n - <b>Modul III</b> – zadaci se rješavaju na “drag and drop” način \n \n Svaki od navedenih modula sastoji se od nekoliko matematički težinskih nivoa. </string>
-		<string name="odgovor">Odgovor</string>
-		<string name="result_part_1">Cestitamo, imali ste </string>
-		<string name="t_n_zadatci">Točno / Netočno Zadatci</string>
-		<string name="upisati_tocno_rj">Upisati točno rješenje</string>
-		<string name="drag_drop">Drag and Drop</string>
-		<string name="drag_drop_zadatci">Drag and Drop zadatci</string>
-		<string name="unesite_ime_n_igraca">UNESITE IME NOVOG IGRAČA</string>
-		<string name="unesite_ime">Unesite ime</string>
-		<string name="postojeci_igrac">ILI IZABERI POSTOJEĆEG SA LISTE</string>
-		<string name="kreni">Kreni</string>
-		<string name="opis_razine">Opis razine</string>
-		<string name="naj_rezultati">Najbolji rezultati</string>
-		<string name="natrag">Natrag</string>
-		<string name="tocno">Točno</string>
-		<string name="netocno">Netočno</string>
-		<string name="iduce_pitanje">Iduće pitanje</string>
-		<string name="igrac">Igrač: </string>
-		<string name="odaberi_vrstu_zadatka">Odaberi vrstu zadatka</string>
-		<string name="ime_ne_moze_biti_prazno">Ime igraca ne moze biti prazno</string>
-		<string name="novi_igrac">Novi igrač</string>
-		<string name="da_li_zelite_stvoriti_novog_igraca">Da li želite stvoriti novog igrača?</string>
-		<string name="da">Da</string>
-		<string name="ne">Ne</string>
-		<string name="korisnik_postoji">Taj korisnik već postoji!</string>
-		<string name="morate_rijesiti">Morate riješiti zadatak do kraja!</string>
-		<string name="vrijeme">Vrijeme </string>
-		<string name="vas_rezultat">Vaš rezultat</string>
-		<string name="Razina">Razina</string>	
-    </resources>
+<resources>
+
+    <string name="app_name">MathFun</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_fun">HELLO FUN !</string>
+    <string name="igraj">Igraj</string>
+    <string name="action_settings">Settings</string>
+    <string name="pravila1">Pravila</string>
+    <string name="prikazi_rezultate">Prikaži rezultate</string>
+    <string name="pravila_igre">Pravila igre</string>
+    <string name="pravila">Aplikaciju MathFun sačinjava nekoliko nivoa težine matematičkih zadataka prikazanih kroz tri modula. Moduli se razlikuju u načinu pristupa rješavanju matematičkih zadataka. \n \n -	<b>Modul I </b> – zahtjeva od korisnika razumijevanje zadatka i odluku Točno/Netočno \n \n - <b>Modul II</b>- zadaci se rješavaju na način da korisnik upisuje traženo rješenje \n \n - <b>Modul III</b> – zadaci se rješavaju na “drag and drop” način \n \n Svaki od navedenih modula sastoji se od nekoliko matematički težinskih nivoa. </string>
+    <string name="odgovor">Odgovor</string>
+    <string name="result_part_1">Cestitamo, imali ste </string>
+    <string name="t_n_zadatci">Točno / Netočno Zadatci</string>
+    <string name="upisati_tocno_rj">Upisati točno rješenje</string>
+    <string name="drag_drop">Drag and Drop</string>
+    <string name="drag_drop_zadatci">Drag and Drop zadatci</string>
+    <string name="unesite_ime_n_igraca">UNESITE IME NOVOG IGRAČA</string>
+    <string name="unesite_ime">Unesite ime</string>
+    <string name="postojeci_igrac">ILI IZABERI POSTOJEĆEG SA LISTE</string>
+    <string name="kreni">Kreni</string>
+    <string name="opis_razine">Opis razine</string>
+    <string name="naj_rezultati">Najbolji rezultati</string>
+    <string name="natrag">Natrag</string>
+    <string name="tocno">Točno</string>
+    <string name="netocno">Netočno</string>
+    <string name="iduce_pitanje">Iduće pitanje</string>
+    <string name="igrac">Igrač: </string>
+    <string name="odaberi_vrstu_zadatka">Odaberi vrstu zadatka</string>
+    <string name="ime_ne_moze_biti_prazno">Ime igraca ne moze biti prazno</string>
+    <string name="novi_igrac">Novi igrač</string>
+    <string name="da_li_zelite_stvoriti_novog_igraca">Da li želite stvoriti novog igrača?</string>
+    <string name="da">Da</string>
+    <string name="ne">Ne</string>
+    <string name="korisnik_postoji">Taj korisnik već postoji!</string>
+    <string name="morate_rijesiti">Morate riješiti zadatak do kraja!</string>
+    <string name="vrijeme">Vrijeme </string>
+    <string name="vas_rezultat">Vaš rezultat</string>
+    <string name="Razina">Razina</string>
+    <string name="title_activity_drag">DragActivity</string>
+    
+    <string name="questionNum">Pitanje broj</string>
+
+</resources>

@@ -116,6 +116,12 @@ public class LevelSelect extends BaseActivity implements OnItemClickListener, On
 //			Modules.setToActive("Modul_3");
 //			intent.putExtra(KEY_MODULE, 3);
 //			startActivity(intent);
+			Modules.setToActive("Modul_3");
+			intent = new Intent(getBaseContext(),DragActivity.class);
+			intent.putExtra(KEY_MODULE, 3);
+			intent.putExtra(LevelSelect.KEY_RAZINA,(int)level);
+			intent.putExtra("numOfQuestions", 10);
+			startActivity(intent);
 			break;
 		default:
 			break;
