@@ -2,7 +2,10 @@ package hr.foi.air.db;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import air.testmathfun.R;
+import android.content.Context;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -24,6 +27,7 @@ public class Difficulties extends Model{
 	private int slika;
 	@Column(name="active")
 	private int active;
+	
 	
 	public Difficulties(){
 		super();
@@ -76,6 +80,8 @@ public class Difficulties extends Model{
 	 */
 	public static List<Difficulties> createDifficultiesList(){
 		List<Difficulties> razine=new ArrayList<Difficulties>();
+		
+		
 		razine.add(new Difficulties("Razina 1", "Brojevi do 10 sa matematièkom operacijom zbrajanje", R.drawable.jedan));
 		razine.add(new Difficulties("Razina 2", "Brojevi do 10 sa matematièkom operacijom oduzimanja",  R.drawable.dva));
 		razine.add(new Difficulties("Razina 3", "Brojevi do 10 sa matematièkim operacijama zbrajanja, oduzimanja",  R.drawable.tri));

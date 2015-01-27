@@ -9,9 +9,8 @@ import java.util.List;
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import air.testmathfun.R;
-
 import android.content.Intent;
-
+import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,10 +18,10 @@ import android.view.View.OnClickListener;
 
 
 public class MainActivity extends BaseActivity implements OnClickListener {
-	private ButtonRectangle btIgraj;
-	private ButtonRectangle btPravila;
+	private ButtonRectangle btIgraj,btPravila,btRezultati;
 	private List<Difficulties> listaRazina;
 	private List<Modules> listaModula;
+	private Intent intent;
 	
 	/**
 	 * Metoda koja povezuje layout 
@@ -39,8 +38,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	public void initView() {
 		btIgraj = (ButtonRectangle) findViewById(R.id.btIgraj);
 		btPravila = (ButtonRectangle) findViewById(R.id.btPravila);
+		btRezultati=(ButtonRectangle) findViewById(R.id.btRezultati);
 		btIgraj.setOnClickListener(this);			
 		btPravila.setOnClickListener(this);
+		btRezultati.setOnClickListener(this);
+
 		
 		prepareDatabase();
 	}
@@ -110,6 +112,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.btPravila:
 			startActivity(new Intent(getBaseContext(), Rules.class));
+			break;
+		case R.id.btRezultati:
+			intent=new Intent(getBaseContext(), Result.class);
+			intent.putExtra("sviRezultati", 1);
+			startActivity(intent);
 			break;
 		default:
 			break;

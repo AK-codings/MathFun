@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
 import air.testmathfun.R;
 import android.content.Context;
 import android.content.Intent;
@@ -171,7 +173,7 @@ public class DragActivity extends BaseActivity implements OnTouchListener, OnCli
 		setQuestionsSet();
 		layout = (RelativeLayout)findViewById(R.id.mainDragLayout);
 	    layout.getViewTreeObserver().addOnGlobalLayoutListener(this);
-	    Button bNext = (Button)findViewById(R.id.buttonNext);
+	    ButtonRectangle bNext = (ButtonRectangle)findViewById(R.id.buttonNext);
 	    bNext.setOnClickListener(this);
 	    tvPassedTime = (TextView)findViewById(R.id.tvPassedTime);
 	    passedTimeString = getResources().getString(R.string.vrijeme);

@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/tvBrojPitanja"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:textColor="@color/myBlue"
-        android:textSize="15sp"
-        android:shadowRadius="3"
-        android:layout_gravity="center_horizontal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tvPitanje"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal" 
-        android:layout_marginTop="50dp"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:layout_height="wrap_content"/>
-    
-    <EditText android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etOdgovor"
-        android:padding="10dp"
-        android:layout_margin="20dp"
-        android:inputType="numberSigned"
-        android:background="@drawable/border_blue"
-        android:hint="@string/odgovor"/>
+        <TextView
+            android:id="@+id/tvBrojPitanja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textColor="@color/myBlue"
+            android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/tvPitanje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
+        <EditText
+            android:id="@+id/etOdgovor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/border_blue"
+            android:hint="@string/odgovor"
+            android:inputType="numberSigned"
+            android:padding="10dp" />
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

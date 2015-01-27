@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
-    <TextView android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@id/tvRazina"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:textColor="@color/myBlue"
-        android:textSize="25sp"
-        android:shadowRadius="3"
-        android:layout_gravity="center_horizontal"/>
+        android:orientation="vertical" >
 
-   	<TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvModul"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:textColor="@color/myBlue"
-        android:textSize="15sp"
-        android:shadowRadius="3"
-        android:text="Modul N"
-        android:layout_gravity="center_horizontal"/>
-    
-	<TextView android:layout_width="wrap_content"        
-        android:layout_height="wrap_content"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:shadowRadius="3"
-        android:text="@string/naj_rezultati"
-        android:layout_gravity="center_horizontal"/>
-        
-	<LinearLayout android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal">
-	    
-		<ListView android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:id="@+id/lvNajboljiIgraci">
-		</ListView>
-		
-	 	<ListView android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:id="@+id/lvNajboljiRezultati">
-	 	</ListView>       	    
-	 	
-	</LinearLayout>
+        <TextView
+            android:id="@id/tvRazina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textColor="@color/myBlue"
+            android:textSize="25sp" />
 
-	  <com.gc.materialdesign.views.ButtonRectangle
-	        android:id="@+id/btNatrag"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/natrag"
-	        materialdesign:rippleSpeed="100"/>
-    
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvModul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Modul N"
+            android:textColor="@color/myBlue"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="@string/naj_rezultati"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:orientation="horizontal" >
+
+            <ListView
+                android:id="@+id/lvNajboljiIgraci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
+
+            <ListView
+                android:id="@+id/lvNajboljiRezultati"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </ListView>
+        </LinearLayout>
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btNatrag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/natrag"
+            materialdesign:rippleSpeed="100" />
+    </LinearLayout>
+
+</ScrollView>

@@ -12,7 +12,7 @@
     <string name="pravila">Aplikaciju MathFun sačinjava nekoliko nivoa težine matematičkih zadataka prikazanih kroz tri modula. Moduli se razlikuju u načinu pristupa rješavanju matematičkih zadataka. \n \n -	<b>Modul I </b> – zahtjeva od korisnika razumijevanje zadatka i odluku Točno/Netočno \n \n - <b>Modul II</b>- zadaci se rješavaju na način da korisnik upisuje traženo rješenje \n \n - <b>Modul III</b> – zadaci se rješavaju na “drag and drop” način \n \n Svaki od navedenih modula sastoji se od nekoliko matematički težinskih nivoa. </string>
     <string name="odgovor">Odgovor</string>
     <string name="result_part_1">Cestitamo, imali ste </string>
-    <string name="t_n_zadatci">Točno / Netočno Zadatci</string>
+    <string name="t_n_zadatci">Točno / Netočno zadatci</string>
     <string name="upisati_tocno_rj">Upisati točno rješenje</string>
     <string name="drag_drop">Drag and Drop</string>
     <string name="drag_drop_zadatci">Drag and Drop zadatci</string>
@@ -25,7 +25,7 @@
     <string name="natrag">Natrag</string>
     <string name="tocno">Točno</string>
     <string name="netocno">Netočno</string>
-    <string name="iduce_pitanje">Iduće pitanje</string>
+    <string name="iduce_pitanje">Dalje</string>
     <string name="igrac">Igrač: </string>
     <string name="odaberi_vrstu_zadatka">Odaberi vrstu zadatka</string>
     <string name="ime_ne_moze_biti_prazno">Ime igraca ne moze biti prazno</string>
@@ -39,6 +39,20 @@
     <string name="vas_rezultat">Vaš rezultat</string>
     <string name="Razina">Razina</string>
     <string name="title_activity_drag">DragActivity</string>
+    <string name="razina1">Razina1</string>
+    <string name="razina2">Razina2</string>
+    <string name="razina3">Razina3</string>
+    <string name="razina4">Razina4</string>
+    <string name="razina5">Razina5</string>
+    <string name="razina6">Razina6</string>
+    <string name="razina7">Razina7</string>
+    <string name="br_do_deset1">Brojevi do 10 sa matematičkom operacijom zbrajanje</string>
+    <string name="br_do_deset2">Brojevi do 10 sa matematičkom operacijom oduzimanja</string>
+    <string name="br_do_deset3">Brojevi do 10 sa matematičkim operacijama zbrajanja, oduzimanja</string>
+    <string name="br_do_trideset">Brojevi do 30 sa matematičkim operacijama zbrajanja i oduzimanja</string>
+    <string name="br_do_pedeset1">Brojevi do 50 sa matematičkim operacijama zbrajanja i oduzimanja</string>
+    <string name="br_do_pedeset2">Brojevi do 50 sa matematičkim operacijama zbrajanja, oduzimanja, djeljenja i množenja</string>
+    <string name="br_do_sto">Brojevi do 100 sa matematičkim operacijama zbrajanja, oduzimanja, djeljenja i množenja</string>
     
     <string name="questionNum">Pitanje broj</string>
 

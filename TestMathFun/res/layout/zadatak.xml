@@ -1,71 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/tvRazinaZadatak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
-        android:textColor="@color/myBlue"
-        android:textSize="30sp" />
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="fill_parent"
-        android:layout_height="180dp" >
-    </FrameLayout>
-    
-    <LinearLayout android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        
-	    <com.gc.materialdesign.views.ButtonRectangle
-	       android:id="@+id/btTocno"
-	       android:layout_width="match_parent"
-	       android:layout_weight="1"
-	       android:layout_height="wrap_content"
-	       android:text="@string/tocno"
-	       materialdesign:rippleSpeed="100" />
-	
-	   <com.gc.materialdesign.views.ButtonRectangle
-	       android:layout_weight="1"
-	       android:id="@+id/btNetocno"
-	       android:layout_width="match_parent"
-	       android:layout_height="wrap_content"
-	       android:text="@string/netocno"
-	       materialdesign:rippleSpeed="100" />       
-	       
-    </LinearLayout>
-    
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/btIducePitanje"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/iduce_pitanje"
-        materialdesign:rippleSpeed="100" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tvVrijeme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
-        android:text="Razina N"
-        android:textColor="@color/myBlue"
-        android:layout_marginTop="20dp"
-        android:padding="5dp"
-        android:background="@drawable/border_blue"
-        android:textSize="30sp" />
+        <TextView
+            android:id="@+id/tvRazinaZadatak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textColor="@color/myBlue"
+            android:textSize="30sp" />
 
-</LinearLayout>
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="180dp" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/btTocno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tocno"
+                materialdesign:rippleSpeed="100" />
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/btNetocno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/netocno"
+                materialdesign:rippleSpeed="100" />
+        </LinearLayout>
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btIducePitanje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iduce_pitanje"
+            materialdesign:rippleSpeed="100" />
+
+        <TextView
+            android:id="@+id/tvVrijeme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_blue"
+            android:padding="5dp"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Razina N"
+            android:textColor="@color/myBlue"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</ScrollView>

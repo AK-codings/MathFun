@@ -1,63 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:padding="9dp">
+    android:layout_height="match_parent" >
 
-     <TextView
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
-        android:text="@string/unesite_ime_n_igraca"
-        android:textColor="@color/myBlue"
-        android:textSize="20sp" />
-        
-    <EditText
-        android:layout_marginTop="10sp"
-        android:layout_marginBottom="30sp"
-        android:id="@+id/etUnesiIgraca"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_blue"
-        android:ems="10"
-        android:padding="10dp"
-        android:textColor="@color/myBlue"
-        android:textSize="17sp"
-        android:hint="@string/unesite_ime"
-        android:textColorHint="@color/myGray"
-        android:textCursorDrawable="@null"
-        android:typeface="sans" />
-    
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/myBlue"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
-        android:text="@string/postojeci_igrac"
-        android:textColor="@color/myBlue"
-        android:textSize="20sp" />
-    
-     <ListView    
-        android:id="@+id/lvListIgraca"
-        android:layout_width="match_parent"
-        android:orientation="vertical" 
-        android:layout_height="200dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="9dp" >
 
-	  <com.gc.materialdesign.views.ButtonRectangle
-	        android:id="@+id/btKreni"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/kreni"
-	        materialdesign:rippleSpeed="100"/>
+        <TextView
+            android:id="@+id/tvImeIgracaNovog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="@string/unesite_ime_n_igraca"
+            android:textColor="@color/myBlue"
+            android:textSize="20sp" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/etUnesiIgraca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30sp"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/border_blue"
+            android:ems="10"
+            android:hint="@string/unesite_ime"
+            android:padding="10dp"
+            android:textColor="@color/myBlue"
+            android:textColorHint="@color/myGray"
+            android:textCursorDrawable="@null"
+            android:textSize="17sp"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/tvIliOdaberi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/myBlue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="@string/postojeci_igrac"
+            android:textColor="@color/myBlue"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/lvListIgraca"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btKreni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kreni"
+            materialdesign:rippleSpeed="100" />
+    </LinearLayout>
+
+</ScrollView>

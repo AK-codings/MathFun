@@ -77,6 +77,15 @@ public class Highscore extends Model{
 		return new Select().from(Highscore.class).orderBy("highscore DESC").where("difficulty_id=? AND module_id=?",difficulties.getId(), modul.getId()).limit(5).execute();
 	}
 	/**
+	 * Metoda za ispit najboljih ukupnih 5 rezultata 
+	 * @param difficulties
+	 * @param modul
+	 * @return List<Highscore>
+	 */
+	public static List<Highscore> getBestFiveResults(){
+		return new Select().from(Highscore.class).orderBy("highscore DESC").limit(5).execute();
+	}
+	/**
 	 * Metoda za ažuriranje najboljih rezultata
 	 * @param modules
 	 * @param difficulties

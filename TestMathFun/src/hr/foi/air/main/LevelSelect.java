@@ -112,10 +112,6 @@ public class LevelSelect extends BaseActivity implements OnItemClickListener, On
 			startActivity(intent);
 			break;
 		case R.id.btModul3:
-			Toast.makeText(getBaseContext(), "Trenutno nije u funkciji!", Toast.LENGTH_SHORT).show();
-//			Modules.setToActive("Modul_3");
-//			intent.putExtra(KEY_MODULE, 3);
-//			startActivity(intent);
 			Modules.setToActive("Modul_3");
 			intent = new Intent(getBaseContext(),DragActivity.class);
 			intent.putExtra(KEY_MODULE, 3);
